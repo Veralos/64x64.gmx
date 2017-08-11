@@ -5,57 +5,69 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
-    <sound>sound\snd_shoot</sound>
-    <sound>sound\snd_hit</sound>
-    <sound>sound\snd_destroy</sound>
-    <sound>sound\snd_hurt</sound>
-    <sound>sound\snd_enemy_shoot</sound>
-    <sound>sound\snd_dash</sound>
-    <sound>sound\snd_fall</sound>
-    <sound>sound\snd_magnet</sound>
-    <sound>sound\snd_magnet_fail</sound>
-    <sound>sound\snd_collect</sound>
-    <sound>sound\mus_fanfare</sound>
-    <sound>sound\snd_deflect</sound>
-    <sound>sound\snd_select</sound>
-    <sound>sound\snd_confirm</sound>
-    <sound>sound\snd_error</sound>
+    <sounds name="sounds">
+      <sound>sound\snd_shoot</sound>
+      <sound>sound\snd_hit</sound>
+      <sound>sound\snd_destroy</sound>
+      <sound>sound\snd_hurt</sound>
+      <sound>sound\snd_enemy_shoot</sound>
+      <sound>sound\snd_dash</sound>
+      <sound>sound\snd_fall</sound>
+      <sound>sound\snd_magnet</sound>
+      <sound>sound\snd_magnet_fail</sound>
+      <sound>sound\snd_collect</sound>
+      <sound>sound\mus_fanfare</sound>
+      <sound>sound\snd_deflect</sound>
+      <sound>sound\snd_select</sound>
+      <sound>sound\snd_confirm</sound>
+      <sound>sound\snd_error</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
-    <sprite>sprites\spr_player</sprite>
-    <sprite>sprites\spr_player_power</sprite>
-    <sprite>sprites\spr_player_indicator</sprite>
-    <sprite>sprites\spr_player_magnet</sprite>
-    <sprite>sprites\spr_bullet</sprite>
-    <sprite>sprites\spr_wall</sprite>
-    <sprite>sprites\spr_wall_edge3</sprite>
-    <sprite>sprites\spr_wall_edge1</sprite>
-    <sprite>sprites\spr_wall_edge2</sprite>
-    <sprite>sprites\spr_wall_edge4</sprite>
-    <sprite>sprites\spr_wall_edge0</sprite>
-    <sprite>sprites\spr_floor</sprite>
-    <sprite>sprites\spr_box</sprite>
-    <sprite>sprites\spr_box_power</sprite>
-    <sprite>sprites\spr_blaster</sprite>
-    <sprite>sprites\spr_turret</sprite>
-    <sprite>sprites\spr_enemy_bullet</sprite>
+    <sprites name="player">
+      <sprite>sprites\spr_player</sprite>
+      <sprite>sprites\spr_player_power</sprite>
+      <sprite>sprites\spr_player_indicator</sprite>
+      <sprite>sprites\spr_player_magnet</sprite>
+      <sprite>sprites\spr_bullet</sprite>
+    </sprites>
+    <sprites name="wall">
+      <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_wall_edge0</sprite>
+      <sprite>sprites\spr_wall_edge1</sprite>
+      <sprite>sprites\spr_wall_edge2</sprite>
+      <sprite>sprites\spr_wall_edge3</sprite>
+      <sprite>sprites\spr_wall_edge4</sprite>
+      <sprite>sprites\spr_wall_asteroid</sprite>
+      <sprite>sprites\spr_wall_asteroid_edge</sprite>
+      <sprite>sprites\spr_wall_magnet</sprite>
+      <sprite>sprites\spr_wall_magnet_edge</sprite>
+      <sprite>sprites\spr_wall_phase</sprite>
+    </sprites>
+    <sprites name="floor">
+      <sprite>sprites\spr_floor_base</sprite>
+      <sprite>sprites\spr_floor</sprite>
+      <sprite>sprites\spr_floor_asteroid</sprite>
+    </sprites>
+    <sprites name="enemy">
+      <sprite>sprites\spr_box</sprite>
+      <sprite>sprites\spr_blaster</sprite>
+      <sprite>sprites\spr_box_power</sprite>
+      <sprite>sprites\spr_turret</sprite>
+      <sprite>sprites\spr_enemy_bullet</sprite>
+    </sprites>
     <sprite>sprites\spr_elevator</sprite>
-    <sprite>sprites\spr_floor_asteroid</sprite>
-    <sprite>sprites\spr_wall_asteroid</sprite>
-    <sprite>sprites\spr_wall_asteroid_edge</sprite>
-    <sprite>sprites\spr_floor_base</sprite>
-    <sprite>sprites\spr_wall_magnet</sprite>
-    <sprite>sprites\spr_wall_magnet_edge</sprite>
-    <sprite>sprites\spr_item_shot</sprite>
-    <sprite>sprites\spr_item_power_shot</sprite>
-    <sprite>sprites\spr_item_dash</sprite>
-    <sprite>sprites\spr_item_phase_dash</sprite>
-    <sprite>sprites\spr_item_magnet</sprite>
-    <sprite>sprites\spr_item_magnet_inverter</sprite>
-    <sprite>sprites\spr_item_heat_shield</sprite>
-    <sprite>sprites\spr_item_air_tank</sprite>
-    <sprite>sprites\spr_wall_phase</sprite>
-    <sprite>sprites\spr_key</sprite>
+    <sprites name="item">
+      <sprite>sprites\spr_item_shot</sprite>
+      <sprite>sprites\spr_item_power_shot</sprite>
+      <sprite>sprites\spr_item_dash</sprite>
+      <sprite>sprites\spr_item_phase_dash</sprite>
+      <sprite>sprites\spr_item_magnet</sprite>
+      <sprite>sprites\spr_item_magnet_inverter</sprite>
+      <sprite>sprites\spr_item_heat_shield</sprite>
+      <sprite>sprites\spr_item_air_tank</sprite>
+      <sprite>sprites\spr_key</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -71,37 +83,47 @@
     <font>fonts\fnt_title</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_player</object>
+    <objects name="player">
+      <object>objects\obj_player</object>
+      <object>objects\obj_bullet</object>
+      <object>objects\obj_afterimage</object>
+      <object>objects\obj_magnet</object>
+    </objects>
     <object>objects\obj_draw_game</object>
-    <object>objects\obj_wall_main</object>
-    <object>objects\obj_wall_magnet</object>
-    <object>objects\obj_wall_asteroid</object>
-    <object>objects\obj_wall_phase</object>
-    <object>objects\obj_wall</object>
-    <object>objects\obj_floor_main</object>
-    <object>objects\obj_floor</object>
-    <object>objects\obj_floor_asteroid</object>
-    <object>objects\obj_bullet</object>
+    <objects name="wall">
+      <object>objects\obj_wall</object>
+      <object>objects\obj_wall_main</object>
+      <object>objects\obj_wall_magnet</object>
+      <object>objects\obj_wall_asteroid</object>
+      <object>objects\obj_wall_phase</object>
+    </objects>
+    <objects name="floor">
+      <object>objects\obj_floor</object>
+      <object>objects\obj_floor_main</object>
+      <object>objects\obj_floor_asteroid</object>
+    </objects>
     <object>objects\obj_title</object>
     <object>objects\obj_game_control</object>
-    <object>objects\obj_box</object>
-    <object>objects\obj_box_power</object>
-    <object>objects\obj_enemy</object>
-    <object>objects\obj_turret</object>
-    <object>objects\obj_enemy_bullet</object>
+    <objects name="enemy">
+      <object>objects\obj_enemy</object>
+      <object>objects\obj_box</object>
+      <object>objects\obj_box_power</object>
+      <object>objects\obj_turret</object>
+      <object>objects\obj_enemy_bullet</object>
+      <object>objects\obj_enemy_part</object>
+    </objects>
     <object>objects\obj_elevator</object>
-    <object>objects\obj_enemy_part</object>
-    <object>objects\obj_afterimage</object>
-    <object>objects\obj_magnet</object>
-    <object>objects\obj_item_dash</object>
-    <object>objects\obj_item_phase_dash</object>
-    <object>objects\obj_item_magnet</object>
-    <object>objects\obj_item_magnet_inverter</object>
-    <object>objects\obj_item_heat_shield</object>
-    <object>objects\obj_item_air_tank</object>
-    <object>objects\obj_item_power_shot</object>
-    <object>objects\obj_item</object>
-    <object>objects\obj_key</object>
+    <objects name="item">
+      <object>objects\obj_item</object>
+      <object>objects\obj_item_dash</object>
+      <object>objects\obj_item_phase_dash</object>
+      <object>objects\obj_item_magnet</object>
+      <object>objects\obj_item_magnet_inverter</object>
+      <object>objects\obj_item_heat_shield</object>
+      <object>objects\obj_item_air_tank</object>
+      <object>objects\obj_item_power_shot</object>
+      <object>objects\obj_key</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
