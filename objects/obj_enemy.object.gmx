@@ -61,7 +61,7 @@ mods_y[1] = 1;
 
 for (var i = 0; i &lt; 2; i++) {
     for (var j = 0; j &lt; 2; j++) {
-        var part = instance_create(x, y, obj_enemy_part);
+        var part = instance_create(x - sprite_xoffset + sprite_width / 2, y - sprite_yoffset + sprite_height / 2, obj_enemy_part);
         part.sprite_index = sprite_index;
         part.mod_x = mods_x[i];
         part.mod_y = mods_y[j];
