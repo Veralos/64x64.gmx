@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>event_inherited();
 
+title = "Dash";
+description = "Press S to dash over pits";
+
 if (obj_game_control.item_dash)
     instance_destroy();
 </string>

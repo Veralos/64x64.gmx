@@ -26,6 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>pulse = 0;
+
+title = "Error";
+description = "The developer forgot to put something here";
 </string>
           </argument>
         </arguments>
@@ -75,6 +78,11 @@ if (pulse &gt; 1)
             <kind>1</kind>
             <string>audio_play_sound(snd_collect, 0, false);
 audio_play_sound(mus_fanfare, 0, false);
+
+obj_game_control.state = obj_game_control.item_state;
+obj_game_control.title = title;
+obj_game_control.description = description;
+
 instance_destroy();
 </string>
           </argument>

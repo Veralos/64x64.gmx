@@ -150,6 +150,31 @@ room_goto_next();
                 draw_set_color(make_color_rgb(255, 128, 0));
                 draw_rectangle(61, 58 - floor(53 * (ammo / max_ammo) * (max_ammo / 16)), 62, 58, false);
             }
+            
+            if (obj_game_control.state == obj_game_control.item_state) {
+                draw_set_color(make_color_rgb(32, 32, 32));
+                
+                draw_rectangle(32 - 23, 16 - 7, 32 + 23 - 1, 16 + 7 - 1, false);
+                draw_rectangle(32 - 26, 48 - 10, 32 + 26 - 1, 48 + 10 - 1, false);
+                
+                draw_set_color(make_color_rgb(16, 16, 16));
+                
+                draw_rectangle(32 - 24, 16 - 8, 32 + 24 - 1, 16 + 8 - 1, true);
+                draw_rectangle(32 - 27, 48 - 11, 32 + 27 - 1, 48 + 11 - 1, true);
+                
+                draw_set_color(c_white);
+                
+                draw_set_halign(fa_center);
+                draw_set_valign(fa_middle);
+                
+                draw_set_font(fnt_title);
+                
+                draw_text(32, 15, obj_game_control.title);
+                
+                draw_set_font(fnt_main);
+                
+                draw_text_ext(32, 48, obj_game_control.description, 4, 52);
+            }
         }
         else
             draw_surface(view_surface, 0, 0);

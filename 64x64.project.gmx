@@ -64,6 +64,7 @@
   </shaders>
   <fonts name="fonts">
     <font>fonts\fnt_main</font>
+    <font>fonts\fnt_title</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_player</object>

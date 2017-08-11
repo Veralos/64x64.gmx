@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>event_inherited();
 
+title = "Power Shot";
+description = "Your shots do more damage and break tough boxes";
+
 if (obj_game_control.item_power_shot)
     instance_destroy();
 </string>

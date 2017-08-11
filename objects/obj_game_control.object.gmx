@@ -25,7 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>item_power_shot = false;
+            <string>base_state = 0;
+item_state = 1;
+
+state = base_state;
+
+title = "";
+description = "";
+
+item_power_shot = false;
 item_dash = false;
 item_phase_dash = false;
 item_magnet = false;
@@ -114,47 +122,57 @@ room_goto(ds_grid_get(level1, room_x, room_y));
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (ammo_delay &gt; 0)
-    ammo_delay--;
-else {
-    ammo += 0.5;
-    if (ammo &gt; max_ammo)
-        ammo = max_ammo;
-}
-
-if (instance_exists(obj_player)) {
-    var change_room = false;
-
-    if (obj_player.x &lt; 0) {
-        obj_player.x += room_width;
-        room_x--;
-        change_room = true;
-    }
-    else if (obj_player.x &gt; room_width) {
-        obj_player.x -= room_width;
-        room_x++;
-        change_room = true;
-    }
-    else if (obj_player.y &lt; 0) {
-        obj_player.y += room_height;
-        room_y--;
-        change_room = true;
-    }
-    else if (obj_player.y &gt; room_height) {
-        obj_player.y -= room_height;
-        room_y++;
-        change_room = true;
-    }
-    
-    if (change_room)
-        room_goto(ds_grid_get(level1, room_x, room_y));
-}
-
-if (keyboard_check_pressed(vk_escape)) {
-    if (instance_exists(obj_player))
-        obj_player.persistent = false;
-    persistent = false;
-    room_goto(rm_title);
+            <string>switch (state) {
+    case base_state:
+        if (ammo_delay &gt; 0)
+            ammo_delay--;
+        else {
+            ammo += 0.5;
+            if (ammo &gt; max_ammo)
+                ammo = max_ammo;
+        }
+        
+        if (instance_exists(obj_player)) {
+            var change_room = false;
+        
+            if (obj_player.x &lt; 0) {
+                obj_player.x += room_width;
+                room_x--;
+                change_room = true;
+            }
+            else if (obj_player.x &gt; room_width) {
+                obj_player.x -= room_width;
+                room_x++;
+                change_room = true;
+            }
+            else if (obj_player.y &lt; 0) {
+                obj_player.y += room_height;
+                room_y--;
+                change_room = true;
+            }
+            else if (obj_player.y &gt; room_height) {
+                obj_player.y -= room_height;
+                room_y++;
+                change_room = true;
+            }
+            
+            if (change_room)
+                room_goto(ds_grid_get(level1, room_x, room_y));
+        }
+        
+        if (keyboard_check_pressed(vk_escape)) {
+            if (instance_exists(obj_player))
+                obj_player.persistent = false;
+            persistent = false;
+            room_goto(rm_title);
+        }
+        
+        break;
+    case item_state:
+        if (keyboard_check_pressed(vk_anykey) &amp;&amp; !audio_is_playing(mus_fanfare))
+            state = base_state;
+        
+        break;
 }
 </string>
           </argument>
