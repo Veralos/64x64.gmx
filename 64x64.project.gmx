@@ -14,6 +14,8 @@
     <sound>sound\snd_fall</sound>
     <sound>sound\snd_magnet</sound>
     <sound>sound\snd_magnet_fail</sound>
+    <sound>sound\snd_collect</sound>
+    <sound>sound\mus_fanfare</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_player</sprite>
@@ -80,6 +82,14 @@
     <object>objects\obj_enemy_part</object>
     <object>objects\obj_afterimage</object>
     <object>objects\obj_magnet</object>
+    <object>objects\obj_item_dash</object>
+    <object>objects\obj_item_phase_dash</object>
+    <object>objects\obj_item_magnet</object>
+    <object>objects\obj_item_magnet_inverter</object>
+    <object>objects\obj_item_heat_shield</object>
+    <object>objects\obj_item_air_tank</object>
+    <object>objects\obj_item_power_shot</object>
+    <object>objects\obj_item</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
