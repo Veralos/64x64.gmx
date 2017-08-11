@@ -55,6 +55,7 @@
     <sprite>sprites\spr_item_heat_shield</sprite>
     <sprite>sprites\spr_item_air_tank</sprite>
     <sprite>sprites\spr_wall_phase</sprite>
+    <sprite>sprites\spr_key</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -100,6 +101,7 @@
     <object>objects\obj_item_air_tank</object>
     <object>objects\obj_item_power_shot</object>
     <object>objects\obj_item</object>
+    <object>objects\obj_key</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>

@@ -53,7 +53,7 @@ lift_selected = 1;
 level = 1;
 
 unlocked_levels = ds_list_create();
-ds_list_add(unlocked_levels, 1, 2, 3);
+ds_list_add(unlocked_levels, 1);
 
 level1 = ds_grid_create(9, 9);
 
