@@ -204,7 +204,28 @@
       <room>rooms\rm_level2_6_6</room>
     </rooms>
     <rooms name="level3">
+      <room>rooms\rm_level3_4_1</room>
+      <room>rooms\rm_level3_5_1</room>
+      <room>rooms\rm_level3_6_1</room>
+      <room>rooms\rm_level3_2_2</room>
+      <room>rooms\rm_level3_3_2</room>
+      <room>rooms\rm_level3_4_2</room>
+      <room>rooms\rm_level3_5_2</room>
+      <room>rooms\rm_level3_6_2</room>
+      <room>rooms\rm_level3_2_3</room>
+      <room>rooms\rm_level3_3_3</room>
+      <room>rooms\rm_level3_4_3</room>
+      <room>rooms\rm_level3_5_3</room>
+      <room>rooms\rm_level3_3_4</room>
       <room>rooms\rm_level3_4_4</room>
+      <room>rooms\rm_level3_5_4</room>
+      <room>rooms\rm_level3_6_4</room>
+      <room>rooms\rm_level3_3_5</room>
+      <room>rooms\rm_level3_4_5</room>
+      <room>rooms\rm_level3_5_5</room>
+      <room>rooms\rm_level3_6_5</room>
+      <room>rooms\rm_level3_3_6</room>
+      <room>rooms\rm_level3_4_6</room>
     </rooms>
     <rooms name="level4">
       <room>rooms\rm_level4_4_4</room>
