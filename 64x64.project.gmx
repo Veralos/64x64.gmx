@@ -73,6 +73,11 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_draw_sprite_quarter.gml</script>
+    <script>scripts\scr_generate_level0.gml</script>
+    <script>scripts\scr_generate_level1.gml</script>
+    <script>scripts\scr_generate_level2.gml</script>
+    <script>scripts\scr_generate_level3.gml</script>
+    <script>scripts\scr_generate_level4.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shad_white.shader</shader>
