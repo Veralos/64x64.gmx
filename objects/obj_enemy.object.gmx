@@ -118,10 +118,10 @@ room_speed = 10;
             <kind>1</kind>
             <string>audio_play_sound(snd_hit, 0, false);
 obj_draw_game.shake = 1;
+hp -= other.damage;
+hit = true;
 with (other) 
     instance_destroy();
-hp--;
-hit = true;
 </string>
           </argument>
         </arguments>

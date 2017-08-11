@@ -109,12 +109,12 @@ switch (state) {
         if (keyboard_check_pressed(vk_up) || keyboard_check_pressed(vk_down))
             priority_x = false;
             
-        if (keyboard_check_pressed(ord('S')) &amp;&amp; dash_cooldown &lt;= 0) {
+        if (keyboard_check_pressed(ord('S')) &amp;&amp; dash_cooldown &lt;= 0 &amp;&amp; obj_game_control.item_dash) {
             audio_play_sound(snd_dash, 0, false);
             dash = 2;
             state = dash_state;
         }
-        else if (keyboard_check_pressed(ord('D'))) {
+        else if (keyboard_check_pressed(ord('D')) &amp;&amp; obj_game_control.item_magnet) {
             with (instance_create(x, y, obj_magnet)) {
                 angle = obj_player.angle;
                 move_contact_solid(angle, 64);
@@ -126,7 +126,8 @@ switch (state) {
                 audio_play_sound(snd_magnet, 0, false);
             else {
                 audio_play_sound(snd_magnet_fail, 0, false);
-                magnet_dir = -magnet_dir;
+                if (obj_game_control.item_magnet_inverter)
+                    magnet_dir = -magnet_dir;
             }
             state = magnet_state;
             magnet_flash = true;
@@ -178,6 +179,11 @@ switch (state) {
     
         var move_x = lengthdir_x(dash_speed, angle);
         var move_y = lengthdir_y(dash_speed, angle);
+        
+        if (obj_game_control.item_phase_dash) {
+            with (obj_wall_phase)
+                solid = false;
+        }
     
         if (place_free(x + move_x, y + move_y)) {
             x += move_x;
@@ -187,9 +193,12 @@ switch (state) {
             move_contact_solid(angle, 4);
             dash = 0;
         }
-            
+        
+        with (obj_wall_phase)
+            solid = true;
+
         dash--;
-        if (dash &lt;= 0) {
+        if (dash &lt;= 0 &amp;&amp; !place_meeting(x, y, obj_wall_phase)) {
             state = base_state;
             dash_cooldown = 5;
         }
@@ -239,7 +248,7 @@ switch (state) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (inv &lt;= 0) {
+            <string>if (inv &lt;= 0 &amp;&amp; !(state == dash_state &amp;&amp; obj_game_control.item_phase_dash)) {
     audio_play_sound(snd_hurt, 0, false);
     obj_game_control.hp--;
     with (other)
@@ -297,6 +306,8 @@ if (magnet_dir == 1)
     draw_set_color(c_blue);
 
 var sprite = spr_player;
+if (obj_game_control.item_power_shot)
+    sprite = spr_player_power;
 if (state == magnet_state) {
     sprite = spr_player_magnet;
     
