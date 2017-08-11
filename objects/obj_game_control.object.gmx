@@ -55,6 +55,10 @@ level = 1;
 unlocked_levels = ds_list_create();
 ds_list_add(unlocked_levels, 1);
 
+level0 = ds_grid_create(9, 9);
+
+ds_grid_add(level0, 4, 4, rm_level0_4_4);
+
 level1 = ds_grid_create(9, 9);
 
 ds_grid_add(level1, 3, 0, rm_level1_3_0);
@@ -103,10 +107,25 @@ ds_grid_add(level1, 4, 7, rm_level1_4_7);
 
 ds_grid_add(level1, 4, 8, rm_level1_4_8);
 
+level2 = ds_grid_create(9, 9);
+
+ds_grid_add(level2, 4, 4, rm_level2_4_4);
+
+level3 = ds_grid_create(9, 9);
+
+ds_grid_add(level3, 4, 4, rm_level3_4_4);
+
+level4 = ds_grid_create(9, 9);
+
+ds_grid_add(level4, 4, 4, rm_level4_4_4);
+
+level_list = ds_list_create();
+ds_list_add(level_list, level0, level1, level2, level3, level4);
+
 room_x = 4;
 room_y = 8;
 
-room_goto(ds_grid_get(level1, room_x, room_y));
+room_goto(ds_grid_get(ds_list_find_value(level_list, level), room_x, room_y));
 </string>
           </argument>
         </arguments>
@@ -164,7 +183,7 @@ room_goto(ds_grid_get(level1, room_x, room_y));
             }
             
             if (change_room)
-                room_goto(ds_grid_get(level1, room_x, room_y));
+                room_goto(ds_grid_get(ds_list_find_value(level_list, level), room_x, room_y));
         }
         
         if (keyboard_check_pressed(vk_escape)) {
@@ -194,6 +213,21 @@ room_goto(ds_grid_get(level1, room_x, room_y));
             lift_selected = 4;
         if (lift_selected &gt; 4)
             lift_selected = 0;
+            
+        if (keyboard_check_pressed(ord('A'))) {
+            if (ds_list_find_index(unlocked_levels, lift_selected) == -1)
+                audio_play_sound(snd_error, 0, false);
+            else {
+                audio_play_sound(snd_confirm, 0, false);
+                state = base_state;
+                if (lift_selected != level) {
+                    level = lift_selected;
+                    obj_player.x = 32;
+                    obj_player.y = 32;
+                    room_goto(ds_grid_get(ds_list_find_value(level_list, level), room_x, room_y));
+                }
+            }
+        }
             
         break;
 }

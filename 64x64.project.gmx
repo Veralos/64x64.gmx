@@ -73,7 +73,7 @@
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_draw_game</object>
-    <object>objects\obj_wall_level1</object>
+    <object>objects\obj_wall_main</object>
     <object>objects\obj_wall_magnet</object>
     <object>objects\obj_wall_asteroid</object>
     <object>objects\obj_wall_phase</object>
@@ -106,6 +106,9 @@
   <rooms name="rooms">
     <room>rooms\rm_init</room>
     <room>rooms\rm_title</room>
+    <rooms name="level0">
+      <room>rooms\rm_level0_4_4</room>
+    </rooms>
     <rooms name="level1">
       <room>rooms\rm_level1_3_0</room>
       <room>rooms\rm_level1_4_0</room>
@@ -144,6 +147,15 @@
       <room>rooms\rm_level1_6_6</room>
       <room>rooms\rm_level1_4_7</room>
       <room>rooms\rm_level1_4_8</room>
+    </rooms>
+    <rooms name="level2">
+      <room>rooms\rm_level2_4_4</room>
+    </rooms>
+    <rooms name="level3">
+      <room>rooms\rm_level3_4_4</room>
+    </rooms>
+    <rooms name="level4">
+      <room>rooms\rm_level4_4_4</room>
     </rooms>
   </rooms>
   <help>

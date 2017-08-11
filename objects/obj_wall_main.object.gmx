@@ -25,8 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>wall_type = obj_wall_level1;
-edge_sprite = spr_wall_edge1;
+            <string>var i = 0;
+
+var edges;
+edges[i++] = spr_wall_edge0;
+edges[i++] = spr_wall_edge1;
+edges[i++] = spr_wall_edge2;
+edges[i++] = spr_wall_edge3;
+edges[i++] = spr_wall_edge4;
+
+wall_type = obj_wall_main;
+edge_sprite = edges[obj_game_control.level];
 
 event_inherited();
 </string>

@@ -32,7 +32,7 @@ y += lengthdir_y(2, dir);
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_wall_level1">
+    <event eventtype="4" ename="obj_wall_main">
       <action>
         <libid>1</libid>
         <id>603</id>
