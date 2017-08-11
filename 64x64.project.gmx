@@ -16,6 +16,7 @@
     <sound>sound\snd_magnet_fail</sound>
     <sound>sound\snd_collect</sound>
     <sound>sound\mus_fanfare</sound>
+    <sound>sound\snd_deflect</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_player</sprite>
@@ -31,6 +32,7 @@
     <sprite>sprites\spr_wall_edge0</sprite>
     <sprite>sprites\spr_floor</sprite>
     <sprite>sprites\spr_box</sprite>
+    <sprite>sprites\spr_box_power</sprite>
     <sprite>sprites\spr_blaster</sprite>
     <sprite>sprites\spr_turret</sprite>
     <sprite>sprites\spr_enemy_bullet</sprite>
@@ -78,6 +80,7 @@
     <object>objects\obj_title</object>
     <object>objects\obj_game_control</object>
     <object>objects\obj_box</object>
+    <object>objects\obj_box_power</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_turret</object>
     <object>objects\obj_enemy_bullet</object>
