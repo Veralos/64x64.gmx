@@ -110,7 +110,9 @@ magnet_dir = 1;
             if (keyboard_check_pressed(vk_up) || keyboard_check_pressed(vk_down))
                 priority_x = false;
                 
-            if (keyboard_check_pressed(ord('S')) &amp;&amp; dash_cooldown &lt;= 0 &amp;&amp; obj_game_control.item_dash) {
+            if (keyboard_check_pressed(vk_shift) &amp;&amp; place_meeting(x, y, obj_elevator))
+                obj_game_control.state = obj_game_control.lift_state;
+            else if (keyboard_check_pressed(ord('S')) &amp;&amp; dash_cooldown &lt;= 0 &amp;&amp; obj_game_control.item_dash) {
                 audio_play_sound(snd_dash, 0, false);
                 dash = 2;
                 state = dash_state;

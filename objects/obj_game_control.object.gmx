@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>base_state = 0;
 item_state = 1;
+lift_state = 2;
 
 state = base_state;
 
@@ -47,6 +48,12 @@ hp = max_hp;
 max_ammo = 8;
 ammo = max_ammo;
 ammo_delay = 0;
+
+lift_selected = 1;
+level = 1;
+
+unlocked_levels = ds_list_create();
+ds_list_add(unlocked_levels, 1, 2, 3);
 
 level1 = ds_grid_create(9, 9);
 
@@ -172,6 +179,22 @@ room_goto(ds_grid_get(level1, room_x, room_y));
         if (keyboard_check_pressed(vk_anykey) &amp;&amp; !audio_is_playing(mus_fanfare))
             state = base_state;
         
+        break;
+    case lift_state:
+        if (keyboard_check_pressed(vk_up)) {
+            audio_play_sound(snd_select, 0, false);
+            lift_selected--;
+        }
+        if (keyboard_check_pressed(vk_down)) {
+            audio_play_sound(snd_select, 0, false);
+            lift_selected++;
+        }
+            
+        if (lift_selected &lt; 0)
+            lift_selected = 4;
+        if (lift_selected &gt; 4)
+            lift_selected = 0;
+            
         break;
 }
 </string>
