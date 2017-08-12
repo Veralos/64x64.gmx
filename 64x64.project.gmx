@@ -24,6 +24,7 @@
       <sound>sound\snd_map</sound>
       <sound>sound\snd_cancel</sound>
       <sound>sound\snd_lift</sound>
+      <sound>sound\snd_slam</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -59,6 +60,8 @@
       <sprite>sprites\spr_box_power</sprite>
       <sprite>sprites\spr_turret</sprite>
       <sprite>sprites\spr_enemy_bullet</sprite>
+      <sprite>sprites\spr_bug</sprite>
+      <sprite>sprites\spr_slammer</sprite>
     </sprites>
     <sprite>sprites\spr_elevator</sprite>
     <sprites name="item">
@@ -125,8 +128,10 @@
       <object>objects\obj_box</object>
       <object>objects\obj_box_power</object>
       <object>objects\obj_turret</object>
+      <object>objects\obj_bug</object>
       <object>objects\obj_enemy_bullet</object>
       <object>objects\obj_enemy_part</object>
+      <object>objects\obj_slammer</object>
     </objects>
     <object>objects\obj_elevator</object>
     <objects name="item">
