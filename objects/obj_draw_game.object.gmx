@@ -211,6 +211,8 @@ room_goto_next();
                         
                     break;
             }
+            
+            scr_draw_map(ds_list_find_value(obj_game_control.map_list, obj_game_control.level), 4, 4);
         }
         else
             draw_surface(view_surface, 0, 0);

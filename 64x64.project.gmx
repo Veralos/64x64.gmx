@@ -43,6 +43,7 @@
       <sprite>sprites\spr_wall_magnet</sprite>
       <sprite>sprites\spr_wall_magnet_edge</sprite>
       <sprite>sprites\spr_wall_phase</sprite>
+      <sprite>sprites\spr_wall_invisible</sprite>
     </sprites>
     <sprites name="floor">
       <sprite>sprites\spr_floor_base</sprite>
@@ -68,6 +69,8 @@
       <sprite>sprites\spr_item_air_tank</sprite>
       <sprite>sprites\spr_key</sprite>
     </sprites>
+    <sprite>sprites\spr_map_square</sprite>
+    <sprite>sprites\spr_map_square_edge</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -78,6 +81,9 @@
     <script>scripts\scr_generate_level2.gml</script>
     <script>scripts\scr_generate_level3.gml</script>
     <script>scripts\scr_generate_level4.gml</script>
+    <script>scripts\scr_draw_map.gml</script>
+    <script>scripts\scr_check_empty_x.gml</script>
+    <script>scripts\scr_check_empty_y.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shad_white.shader</shader>
@@ -101,6 +107,7 @@
       <object>objects\obj_wall_magnet</object>
       <object>objects\obj_wall_asteroid</object>
       <object>objects\obj_wall_phase</object>
+      <object>objects\obj_wall_invisible</object>
     </objects>
     <objects name="floor">
       <object>objects\obj_floor</object>
