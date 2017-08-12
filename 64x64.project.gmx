@@ -95,6 +95,7 @@
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shad_white.shader</shader>
     <shader type="GLSLES">shaders\shad_invert.shader</shader>
+    <shader type="GLSLES">shaders\shad_heat.shader</shader>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fnt_main</font>
@@ -145,6 +146,7 @@
       <object>objects\obj_item_power_shot</object>
       <object>objects\obj_key</object>
     </objects>
+    <object>objects\obj_heat</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>

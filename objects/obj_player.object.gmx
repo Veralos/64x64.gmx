@@ -85,6 +85,12 @@ magnet_dir = 1;
     var curr_floor = instance_place(x, y, obj_floor);
     if (curr_floor != noone &amp;&amp; state != magnet_state)
         last_floor = curr_floor;
+        
+    if (inv &lt;= 0 &amp;&amp; instance_exists(obj_heat) &amp;&amp; !obj_game_control.item_heat_shield) {
+        audio_play_sound(snd_hurt, 0, false);
+        obj_game_control.hp -= 1;
+        inv = 30;
+    }
     
     switch (state) {
         case (base_state):

@@ -39,6 +39,10 @@ if (flash_timer &lt;= 0) {
     flash_timer = 5;
 }
 
+heat_pulse += 0.01
+if (heat_pulse &gt; 1)
+    heat_pulse = 0;
+
 room_speed = 30;
 </string>
           </argument>
@@ -65,6 +69,9 @@ room_speed = 30;
             <string>surface_free(view_surface);
 view_surface = surface_create(view_wview[0], view_hview[0]);
 view_surface_id[0] = view_surface;
+
+surface_free(heat_surface);
+heat_surface = surface_create(64, 64);
     
 surface_free(game_surface);
 game_surface = surface_create(64, 64);
@@ -95,14 +102,16 @@ game_surface = surface_create(64, 64);
 
 application_surface_enable(false);
 application_surface_draw_enable(false);
-//surface_resize(application_surface, 64, 64);
+
 view_surface = -1;
 game_surface = -1;
+heat_surface = -1;
 
 shake = 0;
 invert = 0;
 flash = false;
 flash_timer = 0;
+heat_pulse = 0;
 
 room_goto_next();
 </string>
@@ -139,7 +148,15 @@ room_goto_next();
             draw_rectangle(0, 0, 63, 3, true);
             draw_rectangle(0, 60, 63, 63, true);
             
+            if (instance_exists(obj_heat)) {
+                shader_set(shad_heat);
+                shader_set_uniform_f(shader_get_uniform(shad_heat, "pulse"),  1.5 + 0.5 * sin(heat_pulse * 2 * pi));
+            }
+            
             draw_surface(view_surface, 4, 4);
+            
+            if (instance_exists(obj_heat))
+                shader_reset();
             
             var max_hp = obj_game_control.max_hp;
             var hp = obj_game_control.hp;
@@ -244,6 +261,8 @@ room_goto_next();
 else {
     view_surface = surface_create(view_wview[0], view_hview[0]);
     view_surface_id[0] = view_surface;
+    
+    heat_surface = surface_create(64, 64);
     
     game_surface = surface_create(64, 64);
 }
