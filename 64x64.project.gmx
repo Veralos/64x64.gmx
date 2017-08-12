@@ -134,7 +134,25 @@
     <room>rooms\rm_init</room>
     <room>rooms\rm_title</room>
     <rooms name="level0">
+      <room>rooms\rm_level0_4_1</room>
+      <room>rooms\rm_level0_5_1</room>
+      <room>rooms\rm_level0_3_2</room>
+      <room>rooms\rm_level0_4_2</room>
+      <room>rooms\rm_level0_5_2</room>
+      <room>rooms\rm_level0_3_3</room>
+      <room>rooms\rm_level0_4_3</room>
+      <room>rooms\rm_level0_5_3</room>
+      <room>rooms\rm_level0_2_4</room>
+      <room>rooms\rm_level0_3_4</room>
       <room>rooms\rm_level0_4_4</room>
+      <room>rooms\rm_level0_5_4</room>
+      <room>rooms\rm_level0_2_5</room>
+      <room>rooms\rm_level0_3_5</room>
+      <room>rooms\rm_level0_4_5</room>
+      <room>rooms\rm_level0_5_5</room>
+      <room>rooms\rm_level0_3_6</room>
+      <room>rooms\rm_level0_4_6</room>
+      <room>rooms\rm_level0_5_6</room>
     </rooms>
     <rooms name="level1">
       <room>rooms\rm_level1_3_0</room>
@@ -228,7 +246,34 @@
       <room>rooms\rm_level3_4_6</room>
     </rooms>
     <rooms name="level4">
+      <room>rooms\rm_level4_4_0</room>
+      <room>rooms\rm_level4_4_1</room>
+      <room>rooms\rm_level4_4_2</room>
+      <room>rooms\rm_level4_1_3</room>
+      <room>rooms\rm_level4_2_3</room>
+      <room>rooms\rm_level4_3_3</room>
+      <room>rooms\rm_level4_4_3</room>
+      <room>rooms\rm_level4_5_3</room>
+      <room>rooms\rm_level4_6_3</room>
+      <room>rooms\rm_level4_1_4</room>
+      <room>rooms\rm_level4_2_4</room>
+      <room>rooms\rm_level4_3_4</room>
       <room>rooms\rm_level4_4_4</room>
+      <room>rooms\rm_level4_5_4</room>
+      <room>rooms\rm_level4_6_4</room>
+      <room>rooms\rm_level4_1_5</room>
+      <room>rooms\rm_level4_2_5</room>
+      <room>rooms\rm_level4_3_5</room>
+      <room>rooms\rm_level4_4_5</room>
+      <room>rooms\rm_level4_5_5</room>
+      <room>rooms\rm_level4_6_5</room>
+      <room>rooms\rm_level4_7_5</room>
+      <room>rooms\rm_level4_2_6</room>
+      <room>rooms\rm_level4_3_6</room>
+      <room>rooms\rm_level4_4_6</room>
+      <room>rooms\rm_level4_5_6</room>
+      <room>rooms\rm_level4_6_6</room>
+      <room>rooms\rm_level4_7_6</room>
     </rooms>
   </rooms>
   <help>
