@@ -201,28 +201,24 @@ room_goto_next();
                     
                     draw_set_font(fnt_main);
                     
-                    for (var i = 0; i &lt; 5; i++) {
-                        if (ds_list_find_index(obj_game_control.unlocked_levels, i) == -1)
-                            draw_set_alpha(0.5);
-                            
-                        if (obj_game_control.level == i)
-                            draw_set_color(c_yellow);
-                            
-                        var text = "Level " + string(i);
-                        if (obj_game_control.lift_selected == i)
-                            text = "&gt; " + text + " &lt;";
-                        draw_text(32, 21 + 5 * i, text);
-                        
-                        draw_set_alpha(1);
-                        draw_set_color(c_white);
-                    }
+                    scr_draw_levels(obj_game_control.unlocked_levels, obj_game_control.level, obj_game_control.lift_selected, 32, 21);
                         
                     break;
                 case (obj_game_control.map_state):
                     draw_set_color(c_black);
-                    draw_rectangle(4, 4, 60, 60, false);
+                    draw_rectangle(4, 4, 59, 59, false);
+                    
+                    draw_set_halign(fa_center);
+                    draw_set_valign(fa_middle);
+                    
+                    draw_set_font(fnt_main);
+                    
+                    scr_draw_levels(obj_game_control.unlocked_levels, obj_game_control.level, obj_game_control.lift_selected, 32, 36);
                 
-                    scr_draw_map(ds_list_find_value(obj_game_control.map_list, obj_game_control.level), flash, obj_game_control.room_x, obj_game_control.room_y, 4, 4);
+                    var draw_flash = flash;
+                    if (obj_game_control.lift_selected != obj_game_control.level)
+                        draw_flash = false;
+                    scr_draw_map(ds_list_find_value(obj_game_control.map_list, obj_game_control.lift_selected), draw_flash, obj_game_control.room_x, obj_game_control.room_y, 5, 5);
                                 
                     break;
             }

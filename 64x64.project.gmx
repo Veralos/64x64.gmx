@@ -5,6 +5,7 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
+    <sound>sound\mus_fanfare</sound>
     <sounds name="sounds">
       <sound>sound\snd_shoot</sound>
       <sound>sound\snd_hit</sound>
@@ -16,11 +17,13 @@
       <sound>sound\snd_magnet</sound>
       <sound>sound\snd_magnet_fail</sound>
       <sound>sound\snd_collect</sound>
-      <sound>sound\mus_fanfare</sound>
       <sound>sound\snd_deflect</sound>
       <sound>sound\snd_select</sound>
       <sound>sound\snd_confirm</sound>
       <sound>sound\snd_error</sound>
+      <sound>sound\snd_map</sound>
+      <sound>sound\snd_cancel</sound>
+      <sound>sound\snd_lift</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -84,6 +87,7 @@
     <script>scripts\scr_draw_map.gml</script>
     <script>scripts\scr_check_empty_x.gml</script>
     <script>scripts\scr_check_empty_y.gml</script>
+    <script>scripts\scr_draw_levels.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shad_white.shader</shader>

@@ -103,6 +103,8 @@ room_goto(ds_grid_get(ds_list_find_value(level_list, level), room_x, room_y));
             <kind>1</kind>
             <string>switch (state) {
     case base_state:
+        lift_selected = level;
+    
         if (ammo_delay &gt; 0)
             ammo_delay--;
         else {
@@ -113,8 +115,10 @@ room_goto(ds_grid_get(ds_list_find_value(level_list, level), room_x, room_y));
         
         if (instance_exists(obj_player)) {
             mask_index = spr_player;
-            if (keyboard_check_pressed(vk_shift) &amp;&amp; place_meeting(obj_player.x, obj_player.y, obj_elevator))
+            if (keyboard_check_pressed(vk_shift) &amp;&amp; place_meeting(obj_player.x, obj_player.y, obj_elevator)) {
+                audio_play_sound(snd_lift, 0, false);
                 state = lift_state;
+            }
             mask_index = spr_floor_base;
             
             var change_room = false;
@@ -151,8 +155,10 @@ room_goto(ds_grid_get(ds_list_find_value(level_list, level), room_x, room_y));
             room_goto(rm_title);
         }
         
-        if (keyboard_check_pressed(vk_space))
+        if (keyboard_check_pressed(vk_space)) {
+            audio_play_sound(snd_map, 0, false);
             state = map_state;
+        }
         
         break;
     case item_state:
@@ -190,13 +196,31 @@ room_goto(ds_grid_get(ds_list_find_value(level_list, level), room_x, room_y));
             }
         }
         
-        if (keyboard_check_pressed(vk_shift))
+        if (keyboard_check_pressed(vk_shift)) {
+            audio_play_sound(snd_cancel, 0, false);
             state = base_state;
+        }
             
         break;
     case map_state:
-        if (keyboard_check_pressed(vk_space))
+        if (keyboard_check_pressed(vk_up)) {
+            audio_play_sound(snd_select, 0, false);
+            lift_selected--;
+        }
+        if (keyboard_check_pressed(vk_down)) {
+            audio_play_sound(snd_select, 0, false);
+            lift_selected++;
+        }
+            
+        if (lift_selected &lt; 0)
+            lift_selected = 4;
+        if (lift_selected &gt; 4)
+            lift_selected = 0;
+    
+        if (keyboard_check_pressed(vk_space)) {
+            audio_play_sound(snd_cancel, 0, false);
             state = base_state;
+        }
         break;
 }
 </string>
