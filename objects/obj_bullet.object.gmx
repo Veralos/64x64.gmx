@@ -53,8 +53,10 @@ if (obj_game_control.item_power_shot) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x += lengthdir_x(3, image_angle);
-y += lengthdir_y(3, image_angle);
+            <string>if (obj_game_control.state == obj_game_control.base_state) {
+    x += lengthdir_x(3, image_angle);
+    y += lengthdir_y(3, image_angle);
+}
 </string>
           </argument>
         </arguments>

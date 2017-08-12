@@ -51,9 +51,11 @@ description = "The developer forgot to put something here";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>pulse += 0.1;
-if (pulse &gt; 1)
-    pulse = 0;
+            <string>if (obj_game_control.state == obj_game_control.base_state) {
+    pulse += 0.1;
+    if (pulse &gt; 1)
+        pulse = 0;
+}
 </string>
           </argument>
         </arguments>

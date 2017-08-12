@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (keyboard_check_pressed(vk_space)) { 
+            <string>if (keyboard_check_pressed(vk_f3)) { 
     scale *= 2
     if (scale &gt; 16)
         scale = 1;
@@ -210,9 +210,11 @@ room_goto_next();
                     }
                         
                     break;
+                case (obj_game_control.map_state):
+                    scr_draw_map(ds_list_find_value(obj_game_control.map_list, obj_game_control.level), 4, 4);
+                                
+                    break;
             }
-            
-            scr_draw_map(ds_list_find_value(obj_game_control.map_list, obj_game_control.level), 4, 4);
         }
         else
             draw_surface(view_surface, 0, 0);

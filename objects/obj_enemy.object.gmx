@@ -92,8 +92,12 @@ room_speed = 10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (hp &lt;= 0)
-    instance_destroy();
+            <string>if (obj_game_control.state == obj_game_control.base_state) {
+    if (hp &lt;= 0)
+        instance_destroy();
+        
+    event_user(0);
+}
 </string>
           </argument>
         </arguments>
