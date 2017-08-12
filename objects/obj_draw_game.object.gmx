@@ -33,6 +33,12 @@
     window_set_size(scale * 64, scale * 64);
 }
 
+flash_timer--;
+if (flash_timer &lt;= 0) {
+    flash = !flash;
+    flash_timer = 5;
+}
+
 room_speed = 30;
 </string>
           </argument>
@@ -95,6 +101,8 @@ game_surface = -1;
 
 shake = 0;
 invert = 0;
+flash = false;
+flash_timer = 0;
 
 room_goto_next();
 </string>
@@ -211,7 +219,10 @@ room_goto_next();
                         
                     break;
                 case (obj_game_control.map_state):
-                    scr_draw_map(ds_list_find_value(obj_game_control.map_list, obj_game_control.level), 4, 4);
+                    draw_set_color(c_black);
+                    draw_rectangle(4, 4, 60, 60, false);
+                
+                    scr_draw_map(ds_list_find_value(obj_game_control.map_list, obj_game_control.level), flash, obj_game_control.room_x, obj_game_control.room_y, 4, 4);
                                 
                     break;
             }
