@@ -32,6 +32,8 @@ map_state = 3;
 
 state = base_state;
 
+on_lift = false;
+
 title = "";
 description = "";
 
@@ -70,7 +72,7 @@ for (var i = 0; i &lt; 5; i++) {
     var map = ds_grid_create(9, 9);
     for (var col = 0; col &lt; 9; col++) {
         for (var row = 0; row &lt; 9; row++)
-            ds_grid_add(map, col, row, "00000");
+            ds_grid_add(map, col, row, "000000");
     }
     ds_list_add(map_list, map);
 }
@@ -269,13 +271,14 @@ ammo_delay = 30;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var room_string = "1";
+            <string>var old_string = ds_grid_get(ds_list_find_value(map_list, level), room_x, room_y);
+var room_string = "1";
 
 room_string += scr_check_empty_x(room_width - 4);
 room_string += scr_check_empty_y(0);
 room_string += scr_check_empty_x(0);
 room_string += scr_check_empty_y(room_height - 4);
-room_string += "000";
+room_string += string_copy(old_string, 6, 1);
 
 ds_grid_set(ds_list_find_value(map_list, level), room_x, room_y, room_string);
 </string>

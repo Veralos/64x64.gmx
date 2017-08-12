@@ -48,6 +48,8 @@
       <sprite>sprites\spr_wall_magnet_edge</sprite>
       <sprite>sprites\spr_wall_phase</sprite>
       <sprite>sprites\spr_wall_invisible</sprite>
+      <sprite>sprites\spr_wall_enemy</sprite>
+      <sprite>sprites\spr_wall_enemy_edge</sprite>
     </sprites>
     <sprites name="floor">
       <sprite>sprites\spr_floor_base</sprite>
@@ -114,6 +116,7 @@
       <object>objects\obj_wall_main</object>
       <object>objects\obj_wall_magnet</object>
       <object>objects\obj_wall_asteroid</object>
+      <object>objects\obj_wall_enemy</object>
       <object>objects\obj_wall_phase</object>
       <object>objects\obj_wall_invisible</object>
     </objects>
