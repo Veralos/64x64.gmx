@@ -78,8 +78,14 @@ init = true;
             <string>event_inherited();
 
 if (init) {
-    title = "Level " + string(level) + " Key";
-    description = "You can now take the lift to level " + string(level);
+    if (level == 5) {
+        title = "Vault Key";
+        description = "You can now enter the vault on level 4";
+    }
+    else {
+        title = "Level " + string(level) + " Key";
+        description = "You can now take the lift to level " + string(level);
+    }
     image_index = level;
     init = false;
 
