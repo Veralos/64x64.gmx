@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>base_state = 0;
+            <string>starting = true;
+
+base_state = 0;
 item_state = 1;
 lift_state = 2;
 map_state = 3;
@@ -81,6 +83,9 @@ for (var i = 0; i &lt; 5; i++) {
 
 room_x = 4;
 room_y = 8;
+
+if (obj_title.load)
+    scr_load();
 
 room_goto(ds_grid_get(ds_list_find_value(level_list, level), room_x, room_y));
 </string>
@@ -283,7 +288,13 @@ ammo_delay = 30;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var old_string = ds_grid_get(ds_list_find_value(map_list, level), room_x, room_y);
+            <string>if (starting) {
+    obj_save_point.active = false;
+    instance_create(obj_save_point.x, obj_save_point.y, obj_player);
+    starting = false;
+}
+
+var old_string = ds_grid_get(ds_list_find_value(map_list, level), room_x, room_y);
 var room_string = "1";
 
 room_string += scr_check_empty_x(room_width - 4);

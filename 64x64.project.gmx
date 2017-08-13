@@ -103,6 +103,7 @@
     <script>scripts\scr_check_empty_y.gml</script>
     <script>scripts\scr_draw_levels.gml</script>
     <script>scripts\scr_save.gml</script>
+    <script>scripts\scr_load.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shad_white.shader</shader>
