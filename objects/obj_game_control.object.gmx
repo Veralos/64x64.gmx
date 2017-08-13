@@ -103,7 +103,9 @@ room_goto(ds_grid_get(ds_list_find_value(level_list, level), room_x, room_y));
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>switch (state) {
+            <string>on_lift = false;
+
+switch (state) {
     case base_state:
         lift_selected = level;
     
@@ -117,7 +119,10 @@ room_goto(ds_grid_get(ds_list_find_value(level_list, level), room_x, room_y));
         
         if (instance_exists(obj_player)) {
             mask_index = spr_player;
-            if (keyboard_check_pressed(vk_shift) &amp;&amp; place_meeting(obj_player.x, obj_player.y, obj_elevator)) {
+            if (place_meeting(obj_player.x, obj_player.y, obj_elevator))
+                on_lift = true;
+            
+            if (keyboard_check_pressed(vk_shift) &amp;&amp; on_lift) {
                 audio_play_sound(snd_lift, 0, false);
                 state = lift_state;
             }

@@ -177,6 +177,19 @@ room_goto_next();
             }
             
             switch (obj_game_control.state){
+                case (obj_game_control.base_state):
+                    if (obj_game_control.on_lift) {
+                        draw_set_color(c_white);
+                        
+                        draw_set_halign(fa_center);
+                        draw_set_valign(fa_middle);
+                        
+                        draw_set_font(fnt_main);
+                        
+                        draw_text_ext(32, 16, "Press shift to use lift", 4, 52);
+                    }
+                    
+                    break;
                 case (obj_game_control.item_state):
                     draw_set_color(make_color_rgb(32, 32, 32));
                     
