@@ -41,13 +41,16 @@ air = 200;
 title = "";
 description = "";
 
-item_power_shot = false;
-item_dash = false;
-item_phase_dash = false;
-item_magnet = false;
-item_magnet_inverter = false;
-item_heat_shield = false;
-item_air_tank = false;
+item_list = ds_list_create();
+ds_list_add(item_list, 0);
+
+item_power_shot = 1;
+item_dash = 2;
+item_phase_dash = 3;
+item_magnet = 4;
+item_magnet_inverter = 5;
+item_heat_shield = 6;
+item_air_tank = 7;
 
 max_hp = 8;
 hp = max_hp;
@@ -124,7 +127,7 @@ switch (state) {
                 ammo = max_ammo;
         }
         
-        if (instance_exists(obj_space) &amp;&amp; ! item_air_tank)
+        if (instance_exists(obj_space) &amp;&amp; ! scr_item_found(item_air_tank))
             air--;
         else
             air = 200;

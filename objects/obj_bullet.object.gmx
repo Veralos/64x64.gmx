@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>image_speed = 0;
 damage = 1;
-if (obj_game_control.item_power_shot) {
+if (scr_item_found(obj_game_control.item_power_shot)) {
     image_index = 1;
     damage = 2;
 }

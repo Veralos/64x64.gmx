@@ -27,8 +27,14 @@
             <kind>1</kind>
             <string>pulse = 0;
 
+item_id = 0;
 title = "Error";
 description = "The developer forgot to put something here";
+
+event_user(0);
+
+if (ds_list_find_index(obj_game_control.item_list, item_id) &gt; - 1)
+    instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -81,6 +87,8 @@ description = "The developer forgot to put something here";
             <string>audio_play_sound(snd_collect, 0, false);
 audio_play_sound(mus_fanfare, 0, false);
 
+ds_list_add(obj_game_control.item_list, item_id);
+
 obj_game_control.state = obj_game_control.item_state;
 obj_game_control.title = title;
 obj_game_control.description = description;
@@ -113,7 +121,7 @@ draw_set_alpha(1.5 - pulse);
 draw_circle(x - 1, y - 1, pulse * 8, true);
 draw_set_alpha(1);
 
-draw_self();
+draw_sprite(spr_item, item_id, x, y);
 </string>
           </argument>
         </arguments>

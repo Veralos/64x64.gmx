@@ -86,7 +86,7 @@ magnet_dir = 1;
     if (curr_floor != noone &amp;&amp; state != magnet_state)
         last_floor = curr_floor;
         
-    if (inv &lt;= 0 &amp;&amp; instance_exists(obj_heat) &amp;&amp; !obj_game_control.item_heat_shield) {
+    if (inv &lt;= 0 &amp;&amp; instance_exists(obj_heat) &amp;&amp; !scr_item_found(obj_game_control.item_heat_shield)) {
         audio_play_sound(snd_hurt, 0, false);
         obj_game_control.hp -= 1;
         inv = 30;
@@ -116,12 +116,12 @@ magnet_dir = 1;
             if (keyboard_check_pressed(vk_up) || keyboard_check_pressed(vk_down))
                 priority_x = false;
                 
-            if (keyboard_check_pressed(ord('S')) &amp;&amp; dash_cooldown &lt;= 0 &amp;&amp; obj_game_control.item_dash) {
+            if (keyboard_check_pressed(ord('S')) &amp;&amp; dash_cooldown &lt;= 0 &amp;&amp; scr_item_found(obj_game_control.item_dash)) {
                 audio_play_sound(snd_dash, 0, false);
                 dash = 2;
                 state = dash_state;
             }
-            else if (keyboard_check_pressed(ord('D')) &amp;&amp; obj_game_control.item_magnet) {
+            else if (keyboard_check_pressed(ord('D')) &amp;&amp; scr_item_found(obj_game_control.item_magnet)) {
                 with (instance_create(x, y, obj_magnet)) {
                     angle = obj_player.angle;
                     move_contact_solid(angle, 64);
@@ -133,7 +133,7 @@ magnet_dir = 1;
                     audio_play_sound(snd_magnet, 0, false);
                 else {
                     audio_play_sound(snd_magnet_fail, 0, false);
-                    if (obj_game_control.item_magnet_inverter)
+                    if (scr_item_found(obj_game_control.item_magnet_inverter))
                         magnet_dir = -magnet_dir;
                 }
                 state = magnet_state;
@@ -189,7 +189,7 @@ magnet_dir = 1;
             var move_x = lengthdir_x(dash_speed, angle);
             var move_y = lengthdir_y(dash_speed, angle);
             
-            if (obj_game_control.item_phase_dash) {
+            if (scr_item_found(obj_game_control.item_phase_dash)) {
                 with (obj_wall_phase)
                     solid = false;
             }
@@ -258,7 +258,7 @@ magnet_dir = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (inv &lt;= 0 &amp;&amp; !(state == dash_state &amp;&amp; obj_game_control.item_phase_dash)) {
+            <string>if (inv &lt;= 0 &amp;&amp; !(state == dash_state &amp;&amp; scr_item_found(obj_game_control.item_phase_dash))) {
     audio_play_sound(snd_hurt, 0, false);
     obj_game_control.hp--;
     with (other)
@@ -287,7 +287,7 @@ magnet_dir = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (inv &lt;= 0 &amp;&amp; !(state == dash_state &amp;&amp; obj_game_control.item_phase_dash)) {
+            <string>if (inv &lt;= 0 &amp;&amp; !(state == dash_state &amp;&amp; scr_item_found(obj_game_control.item_phase_dash))) {
     audio_play_sound(snd_hurt, 0, false);
     obj_game_control.hp -= 2;
     inv = 15;
@@ -343,7 +343,7 @@ if (magnet_dir == 1)
     draw_set_color(c_blue);
 
 var sprite = spr_player;
-if (obj_game_control.item_power_shot)
+if (scr_item_found(obj_game_control.item_power_shot))
     sprite = spr_player_power;
 if (state == magnet_state) {
     sprite = spr_player_magnet;

@@ -73,14 +73,7 @@
     </sprites>
     <sprite>sprites\spr_elevator</sprite>
     <sprites name="item">
-      <sprite>sprites\spr_item_shot</sprite>
-      <sprite>sprites\spr_item_power_shot</sprite>
-      <sprite>sprites\spr_item_dash</sprite>
-      <sprite>sprites\spr_item_phase_dash</sprite>
-      <sprite>sprites\spr_item_magnet</sprite>
-      <sprite>sprites\spr_item_magnet_inverter</sprite>
-      <sprite>sprites\spr_item_heat_shield</sprite>
-      <sprite>sprites\spr_item_air_tank</sprite>
+      <sprite>sprites\spr_item</sprite>
       <sprite>sprites\spr_key</sprite>
     </sprites>
     <sprite>sprites\spr_map_square</sprite>
@@ -104,6 +97,7 @@
     <script>scripts\scr_draw_levels.gml</script>
     <script>scripts\scr_save.gml</script>
     <script>scripts\scr_load.gml</script>
+    <script>scripts\scr_item_found.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shad_white.shader</shader>
