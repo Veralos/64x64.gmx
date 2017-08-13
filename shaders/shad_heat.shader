@@ -30,7 +30,7 @@ void main()
 {
     vec4 col = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
     
-    col.r += 0.2;
+    col.r += 0.1;
     col.g = (0.5 + 0.25 * pulse) * col.g;//+= 0.05 * pulse;
     col.b = 0.0;
     

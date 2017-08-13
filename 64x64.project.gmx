@@ -50,12 +50,16 @@
       <sprite>sprites\spr_wall_invisible</sprite>
       <sprite>sprites\spr_wall_enemy</sprite>
       <sprite>sprites\spr_wall_enemy_edge</sprite>
+      <sprite>sprites\spr_wall_cave</sprite>
+      <sprite>sprites\spr_wall_cave_edge</sprite>
     </sprites>
     <sprites name="floor">
       <sprite>sprites\spr_floor_base</sprite>
       <sprite>sprites\spr_floor</sprite>
       <sprite>sprites\spr_floor_asteroid</sprite>
+      <sprite>sprites\spr_floor_cave</sprite>
       <sprite>sprites\spr_floor_collapse</sprite>
+      <sprite>sprites\spr_floor_warning</sprite>
     </sprites>
     <sprites name="enemy">
       <sprite>sprites\spr_box</sprite>
@@ -117,6 +121,7 @@
       <object>objects\obj_wall_main</object>
       <object>objects\obj_wall_magnet</object>
       <object>objects\obj_wall_asteroid</object>
+      <object>objects\obj_wall_cave</object>
       <object>objects\obj_wall_enemy</object>
       <object>objects\obj_wall_phase</object>
       <object>objects\obj_wall_invisible</object>
@@ -124,7 +129,9 @@
     <objects name="floor">
       <object>objects\obj_floor</object>
       <object>objects\obj_floor_main</object>
+      <object>objects\obj_floor_warning</object>
       <object>objects\obj_floor_asteroid</object>
+      <object>objects\obj_floor_cave</object>
       <object>objects\obj_floor_collapse</object>
     </objects>
     <object>objects\obj_title</object>
