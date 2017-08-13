@@ -87,7 +87,10 @@ for (var i = 0; i &lt; 5; i++) {
 room_x = 4;
 room_y = 8;
 
-if (obj_title.load)
+load = true;
+if (instance_exists(obj_title))
+    load = obj_title.load;
+if (load)    
     scr_load();
 
 room_goto(ds_grid_get(ds_list_find_value(level_list, level), room_x, room_y));
@@ -131,6 +134,16 @@ switch (state) {
             air--;
         else
             air = 200;
+            
+        if (air &lt;= 0)
+            hp = 0;
+            
+        if (hp &lt;= 0) {
+            persistent = false;
+            if (instance_exists(obj_player))
+                obj_player.persistent = false;
+            instance_create(0, 0, obj_game_over);
+        }
         
         if (instance_exists(obj_player)) {
             mask_index = spr_player;
@@ -294,6 +307,8 @@ ammo_delay = 30;
             <string>if (starting) {
     obj_save_point.active = false;
     instance_create(obj_save_point.x, obj_save_point.y, obj_player);
+    if (!load)
+        scr_save();
     starting = false;
 }
 

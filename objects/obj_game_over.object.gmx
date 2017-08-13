@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,36 +25,22 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hp = 1;
-hit = false;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="1" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>audio_play_sound(snd_destroy, 0, false);
+            <string>player_x = obj_player.x;
+player_y = obj_player.y;
+player_angle = obj_player.angle;
+power_shot = scr_item_found(obj_game_control.item_power_shot);
 
-scr_enemy_die();
+alpha = -1;
 
-obj_draw_game.invert = 1;
-room_speed = 10;
+selected = 0;
+option_list = ds_list_create();
+
+ds_list_add(option_list,
+    "Retry",
+    "Exit"
+);
+
+room_goto(rm_game_over);
 </string>
           </argument>
         </arguments>
@@ -77,18 +63,47 @@ room_speed = 10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (obj_game_control.state == obj_game_control.base_state) {
-    if (hp &lt;= 0)
-        instance_destroy();
+            <string>if (alpha &lt; 1) {
+    if (!instance_exists(obj_player_die))
+        alpha += 0.05;
+}
+else {
+    if (keyboard_check_pressed(vk_up)) {
+        audio_play_sound(snd_select, 0, false);
+        selected--;
+    }
+    if (keyboard_check_pressed(vk_down)) {
+        audio_play_sound(snd_select, 0, false);
+        selected++;
+    }
+    
+    if (selected &lt; 0)
+        selected = ds_list_size(option_list) - 1;
+    if (selected &gt; ds_list_size(option_list) - 1)
+        selected = 0;
         
-    event_user(0);
+    if (keyboard_check_pressed(ord('A'))) {
+        switch (selected) {
+            case 0:
+                audio_play_sound(snd_confirm, 0, false);
+                instance_create(0, 0, obj_game_control);
+                break;
+            case 1:
+                audio_play_sound(snd_confirm, 0, false);
+                room_goto(rm_title);
+                break;
+            default:
+                audio_play_sound(snd_error, 0, false);
+                break;
+        }
+    }
 }
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_bullet">
+    <event eventtype="7" enumb="4">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -105,12 +120,10 @@ room_speed = 10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(snd_hit, 0, false);
-obj_draw_game.shake = 1;
-hp -= other.damage;
-hit = true;
-with (other) 
-    instance_destroy();
+            <string>persistent = false;
+var player_die = instance_create(player_x + 4, player_y + 4, obj_player_die);
+if (power_shot)
+    player_die.sprite_index = spr_player_power;
 </string>
           </argument>
         </arguments>
@@ -133,17 +146,27 @@ with (other)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (hit)
-    shader_set(shad_white);
-    
-draw_self();
+            <string>draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
 
-//scr_draw_sprite_quarter(sprite_index, 1, 1, x, y);
+draw_set_color(c_white);
 
-if (hit) {
-    shader_reset();
-    hit = false;
+draw_set_alpha(alpha);
+
+draw_set_font(fnt_title);
+
+draw_text(32, 16, "Game Over");
+
+draw_set_font(fnt_main);
+
+for (var i = 0; i &lt; ds_list_size(option_list); i++) {
+    var text = ds_list_find_value(option_list, i);
+    if (i == selected)
+        text = "&gt;" + text + "&lt;";
+    draw_text(32, 40 + 5 * i, text);
 }
+
+draw_set_alpha(1);
 </string>
           </argument>
         </arguments>
