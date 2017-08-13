@@ -159,6 +159,7 @@
       <object>objects\obj_key</object>
     </objects>
     <object>objects\obj_heat</object>
+    <object>objects\obj_space</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
