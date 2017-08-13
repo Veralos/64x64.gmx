@@ -86,6 +86,8 @@
     <sprite>sprites\spr_map_square</sprite>
     <sprite>sprites\spr_map_square_edge</sprite>
     <sprite>sprites\spr_save_point</sprite>
+    <sprite>sprites\spr_title</sprite>
+    <sprite>sprites\spr_stars</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -110,6 +112,7 @@
   <fonts name="fonts">
     <font>fonts\fnt_main</font>
     <font>fonts\fnt_title</font>
+    <font>fonts\fnt_menu</font>
   </fonts>
   <objects name="objects">
     <objects name="player">
@@ -165,6 +168,7 @@
     <object>objects\obj_space</object>
     <object>objects\obj_save_point</object>
     <object>objects\obj_saved</object>
+    <object>objects\obj_space_bg</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
