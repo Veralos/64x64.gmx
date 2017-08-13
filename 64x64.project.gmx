@@ -25,6 +25,7 @@
       <sound>sound\snd_cancel</sound>
       <sound>sound\snd_lift</sound>
       <sound>sound\snd_slam</sound>
+      <sound>sound\snd_save</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -84,6 +85,7 @@
     </sprites>
     <sprite>sprites\spr_map_square</sprite>
     <sprite>sprites\spr_map_square_edge</sprite>
+    <sprite>sprites\spr_save_point</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -98,6 +100,7 @@
     <script>scripts\scr_check_empty_x.gml</script>
     <script>scripts\scr_check_empty_y.gml</script>
     <script>scripts\scr_draw_levels.gml</script>
+    <script>scripts\scr_save.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shad_white.shader</shader>
@@ -160,6 +163,8 @@
     </objects>
     <object>objects\obj_heat</object>
     <object>objects\obj_space</object>
+    <object>objects\obj_save_point</object>
+    <object>objects\obj_saved</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
