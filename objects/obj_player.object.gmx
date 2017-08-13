@@ -140,15 +140,17 @@ magnet_dir = 1;
                 magnet_flash = true;
             }
                 
-            if (!keyboard_check(ord('A')) || state != base_state) {
-                if ((dir_x != 0 &amp;&amp; dir_y != 0)) {
-                    if (priority_x)
-                        angle = point_direction(0, 0, dir_x, 0);
-                    else
-                        angle = point_direction(0, 0, 0, dir_y);
+            if (!keyboard_check(ord('A')) || state == dash_state) {
+                if (state != magnet_state) {
+                    if ((dir_x != 0 &amp;&amp; dir_y != 0)) {
+                        if (priority_x)
+                            angle = point_direction(0, 0, dir_x, 0);
+                        else
+                            angle = point_direction(0, 0, 0, dir_y);
+                    }
+                    else if (!(dir_x == 0 &amp;&amp; dir_y == 0))
+                        angle = point_direction(0, 0, dir_x, dir_y);
                 }
-                else if (!(dir_x == 0 &amp;&amp; dir_y == 0))
-                    angle = point_direction(0, 0, dir_x, dir_y);
             }
             else if (obj_game_control.ammo &gt; 0 &amp;&amp; canshoot &lt;= 0 &amp;&amp; inv &lt;= 0){
                 audio_play_sound(snd_shoot, 0, false);
@@ -212,7 +214,6 @@ magnet_dir = 1;
             break;
         case (magnet_state):
             if (place_meeting(obj_magnet.x, obj_magnet.y, obj_wall_magnet)) {
-            
                 var move_x = magnet_dir * lengthdir_x(3, angle);
                 var move_y = magnet_dir * lengthdir_y(3, angle);
             
