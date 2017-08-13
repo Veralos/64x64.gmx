@@ -181,6 +181,11 @@ room_goto_next();
                     draw_sprite(spr_key, i, 4 + (56 / 6) * (i + 0.5), 2);
             }
             
+            for (var i = 0; i &lt; 8; i++) {
+                if (ds_list_find_index(obj_game_control.item_list, i) &gt; -1)
+                    draw_sprite(spr_item, i, 4 + (56 / 8) * (i + 0.5), 62);
+            }
+            
             switch (obj_game_control.state){
                 case (obj_game_control.base_state):
                     draw_set_color(c_white);
