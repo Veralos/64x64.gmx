@@ -55,6 +55,7 @@
       <sprite>sprites\spr_floor_base</sprite>
       <sprite>sprites\spr_floor</sprite>
       <sprite>sprites\spr_floor_asteroid</sprite>
+      <sprite>sprites\spr_floor_collapse</sprite>
     </sprites>
     <sprites name="enemy">
       <sprite>sprites\spr_box</sprite>
@@ -124,6 +125,7 @@
       <object>objects\obj_floor</object>
       <object>objects\obj_floor_main</object>
       <object>objects\obj_floor_asteroid</object>
+      <object>objects\obj_floor_collapse</object>
     </objects>
     <object>objects\obj_title</object>
     <object>objects\obj_game_control</object>

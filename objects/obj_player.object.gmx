@@ -170,7 +170,7 @@ magnet_dir = 1;
                     event_user(0);
             }
     
-            if (curr_floor == noone) {
+            if (curr_floor == noone &amp;&amp; !place_meeting(x, y, obj_floor_collapse)) {
                 x = last_floor.x + 2;
                 y = last_floor.y + 2;
                 audio_play_sound(snd_fall, 0, false);
