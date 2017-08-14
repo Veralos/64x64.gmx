@@ -5,7 +5,6 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
-    <sound>sound\mus_fanfare</sound>
     <sounds name="sounds">
       <sound>sound\snd_shoot</sound>
       <sound>sound\snd_hit</sound>
@@ -27,6 +26,10 @@
       <sound>sound\snd_slam</sound>
       <sound>sound\snd_save</sound>
     </sounds>
+    <sound>sound\mus_level1</sound>
+    <sound>sound\mus_fanfare</sound>
+    <sound>sound\mus_level2</sound>
+    <sound>sound\mus_level0</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="player">

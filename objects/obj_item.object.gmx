@@ -84,7 +84,8 @@ if (ds_list_find_index(obj_game_control.item_list, item_id) &gt; - 1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(snd_collect, 0, false);
+            <string>audio_pause_sound(ds_list_find_value(obj_game_control.music_list, obj_game_control.level));
+audio_play_sound(snd_collect, 0, false);
 audio_play_sound(mus_fanfare, 0, false);
 
 ds_list_add(obj_game_control.item_list, item_id);

@@ -59,6 +59,15 @@ max_ammo = 8;
 ammo = max_ammo;
 ammo_delay = 0;
 
+music_list = ds_list_create();
+ds_list_add(music_list,
+    mus_level0,
+    mus_level1,
+    mus_level2,
+    mus_level1,
+    mus_level1
+);
+
 lift_selected = 1;
 level = 1;
 
@@ -139,6 +148,7 @@ switch (state) {
             hp = 0;
             
         if (hp &lt;= 0) {
+            audio_stop_sound(ds_list_find_value(music_list, level));
             persistent = false;
             if (instance_exists(obj_player))
                 obj_player.persistent = false;
@@ -184,6 +194,7 @@ switch (state) {
         }
         
         if (keyboard_check_pressed(vk_escape)) {
+            audio_stop_sound(ds_list_find_value(music_list, level));
             if (instance_exists(obj_player))
                 obj_player.persistent = false;
             persistent = false;
@@ -197,8 +208,10 @@ switch (state) {
         
         break;
     case item_state:
-        if (keyboard_check_pressed(vk_anykey) &amp;&amp; !audio_is_playing(mus_fanfare))
+        if (keyboard_check_pressed(vk_anykey) &amp;&amp; !audio_is_playing(mus_fanfare)) {
+            audio_resume_sound(ds_list_find_value(obj_game_control.music_list, obj_game_control.level));
             state = base_state;
+        }
         
         break;
     case lift_state:
@@ -223,6 +236,7 @@ switch (state) {
                 audio_play_sound(snd_confirm, 0, false);
                 state = base_state;
                 if (lift_selected != level) {
+                    audio_stop_sound(ds_list_find_value(music_list, level));
                     level = lift_selected;
                     obj_player.x = room_width / 2;
                     obj_player.y = room_height / 2;
@@ -322,6 +336,9 @@ room_string += scr_check_empty_y(room_height - 4);
 room_string += string_copy(old_string, 6, 1);
 
 ds_grid_set(ds_list_find_value(map_list, level), room_x, room_y, room_string);
+
+if (!audio_is_playing(ds_list_find_value(music_list, level)))
+    audio_play_sound(ds_list_find_value(music_list, level), 0, true);
 </string>
           </argument>
         </arguments>
