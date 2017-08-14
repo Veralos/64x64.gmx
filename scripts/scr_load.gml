@@ -1,5 +1,7 @@
 ini_open("save");
 
+//level
+level = ini_read_real("Save", "level", level);
 //room
 room_x = ini_read_real("Save", "room_x", room_x);
 room_y = ini_read_real("Save", "room_y", room_y);
