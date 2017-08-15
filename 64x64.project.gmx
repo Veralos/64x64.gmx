@@ -26,10 +26,12 @@
       <sound>sound\snd_slam</sound>
       <sound>sound\snd_save</sound>
     </sounds>
-    <sound>sound\mus_level1</sound>
     <sound>sound\mus_fanfare</sound>
-    <sound>sound\mus_level2</sound>
     <sound>sound\mus_level0</sound>
+    <sound>sound\mus_level1</sound>
+    <sound>sound\mus_level2</sound>
+    <sound>sound\mus_level3</sound>
+    <sound>sound\mus_level4</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="player">

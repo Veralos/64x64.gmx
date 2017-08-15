@@ -18,7 +18,7 @@
     <isSet>-1</isSet>
     <w>1024</w>
     <h>600</h>
-    <showGrid>-1</showGrid>
+    <showGrid>0</showGrid>
     <showObjects>-1</showObjects>
     <showTiles>-1</showTiles>
     <showBackgrounds>-1</showBackgrounds>
@@ -27,8 +27,8 @@
     <deleteUnderlyingObj>-1</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
     <page>0</page>
-    <xoffset>-50</xoffset>
-    <yoffset>23</yoffset>
+    <xoffset>-60</xoffset>
+    <yoffset>-62</yoffset>
   </makerSettings>
   <backgrounds>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -171,7 +171,6 @@
     <instance objName="obj_wall_magnet" x="36" y="4" name="inst_DA7A128F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_magnet" x="40" y="4" name="inst_09809CD4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_magnet" x="44" y="4" name="inst_661E91CA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_save_point" x="28" y="20" name="inst_920BC855" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_cave" x="0" y="8" name="inst_D98EC108" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_cave" x="4" y="8" name="inst_3BF5D440" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_cave" x="4" y="4" name="inst_23DFF36F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

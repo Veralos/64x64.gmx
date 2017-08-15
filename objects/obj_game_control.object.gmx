@@ -64,8 +64,8 @@ ds_list_add(music_list,
     mus_level0,
     mus_level1,
     mus_level2,
-    mus_level1,
-    mus_level1
+    mus_level3,
+    mus_level4
 );
 
 lift_selected = 1;
