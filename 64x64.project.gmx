@@ -32,6 +32,7 @@
     <sound>sound\mus_level2</sound>
     <sound>sound\mus_level3</sound>
     <sound>sound\mus_level4</sound>
+    <sound>sound\mus_evil</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="player">
@@ -58,6 +59,8 @@
       <sprite>sprites\spr_wall_enemy_edge</sprite>
       <sprite>sprites\spr_wall_cave</sprite>
       <sprite>sprites\spr_wall_cave_edge</sprite>
+      <sprite>sprites\spr_wall_evil</sprite>
+      <sprite>sprites\spr_wall_evil_edge</sprite>
     </sprites>
     <sprites name="floor">
       <sprite>sprites\spr_floor_base</sprite>
@@ -66,6 +69,7 @@
       <sprite>sprites\spr_floor_cave</sprite>
       <sprite>sprites\spr_floor_collapse</sprite>
       <sprite>sprites\spr_floor_warning</sprite>
+      <sprite>sprites\spr_floor_evil</sprite>
     </sprites>
     <sprites name="enemy">
       <sprite>sprites\spr_box</sprite>
@@ -98,6 +102,7 @@
     <sprite>sprites\spr_conveyor_u</sprite>
     <sprite>sprites\spr_drill</sprite>
     <sprite>sprites\spr_vault</sprite>
+    <sprite>sprites\spr_evil</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -141,6 +146,7 @@
       <object>objects\obj_wall_magnet</object>
       <object>objects\obj_wall_asteroid</object>
       <object>objects\obj_wall_cave</object>
+      <object>objects\obj_wall_evil</object>
       <object>objects\obj_wall_enemy</object>
       <object>objects\obj_wall_phase</object>
       <object>objects\obj_wall_invisible</object>
@@ -151,6 +157,7 @@
       <object>objects\obj_floor_warning</object>
       <object>objects\obj_floor_asteroid</object>
       <object>objects\obj_floor_cave</object>
+      <object>objects\obj_floor_evil</object>
       <object>objects\obj_floor_collapse</object>
       <object>objects\obj_conveyor</object>
       <object>objects\obj_conveyor_r</object>
@@ -198,6 +205,8 @@
     <object>objects\obj_heat_bg</object>
     <object>objects\obj_drill</object>
     <object>objects\obj_vault</object>
+    <object>objects\obj_evil</object>
+    <object>objects\obj_evil_music</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>

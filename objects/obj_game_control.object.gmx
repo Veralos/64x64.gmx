@@ -148,6 +148,7 @@ switch (state) {
             hp = 0;
             
         if (hp &lt;= 0) {
+            audio_stop_sound(mus_evil);
             audio_stop_sound(ds_list_find_value(music_list, level));
             persistent = false;
             if (instance_exists(obj_player))
@@ -195,6 +196,7 @@ switch (state) {
         
         if (keyboard_check_pressed(vk_escape)) {
             audio_stop_sound(ds_list_find_value(music_list, level));
+            audio_stop_sound(mus_evil);
             if (instance_exists(obj_player))
                 obj_player.persistent = false;
             persistent = false;
@@ -337,8 +339,10 @@ room_string += string_copy(old_string, 6, 1);
 
 ds_grid_set(ds_list_find_value(map_list, level), room_x, room_y, room_string);
 
-if (!audio_is_playing(ds_list_find_value(music_list, level)))
+if (!instance_exists(obj_evil_music) &amp;&amp; !audio_is_playing(ds_list_find_value(music_list, level))) {
+    audio_stop_sound(mus_evil);
     audio_play_sound(ds_list_find_value(music_list, level), 0, true);
+}
 </string>
           </argument>
         </arguments>
