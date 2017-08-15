@@ -96,6 +96,8 @@
     <sprite>sprites\spr_conveyor_d</sprite>
     <sprite>sprites\spr_conveyor_l</sprite>
     <sprite>sprites\spr_conveyor_u</sprite>
+    <sprite>sprites\spr_drill</sprite>
+    <sprite>sprites\spr_vault</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -194,6 +196,8 @@
     <object>objects\obj_player_die</object>
     <object>objects\obj_electricity</object>
     <object>objects\obj_heat_bg</object>
+    <object>objects\obj_drill</object>
+    <object>objects\obj_vault</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
