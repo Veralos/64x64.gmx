@@ -72,7 +72,9 @@
       <sprite>sprites\spr_blaster</sprite>
       <sprite>sprites\spr_box_power</sprite>
       <sprite>sprites\spr_turret</sprite>
+      <sprite>sprites\spr_turret2</sprite>
       <sprite>sprites\spr_enemy_bullet</sprite>
+      <sprite>sprites\spr_enemy_bullet2</sprite>
       <sprite>sprites\spr_bug</sprite>
       <sprite>sprites\spr_slammer</sprite>
       <sprite>sprites\spr_mine</sprite>
@@ -90,6 +92,10 @@
     <sprite>sprites\spr_title</sprite>
     <sprite>sprites\spr_stars</sprite>
     <sprite>sprites\spr_electricity</sprite>
+    <sprite>sprites\spr_conveyor_r</sprite>
+    <sprite>sprites\spr_conveyor_d</sprite>
+    <sprite>sprites\spr_conveyor_l</sprite>
+    <sprite>sprites\spr_conveyor_u</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -144,6 +150,11 @@
       <object>objects\obj_floor_asteroid</object>
       <object>objects\obj_floor_cave</object>
       <object>objects\obj_floor_collapse</object>
+      <object>objects\obj_conveyor</object>
+      <object>objects\obj_conveyor_r</object>
+      <object>objects\obj_conveyor_d</object>
+      <object>objects\obj_conveyor_l</object>
+      <object>objects\obj_conveyor_u</object>
     </objects>
     <object>objects\obj_title</object>
     <object>objects\obj_game_control</object>
@@ -152,11 +163,13 @@
       <object>objects\obj_box</object>
       <object>objects\obj_box_power</object>
       <object>objects\obj_turret</object>
+      <object>objects\obj_turret2</object>
       <object>objects\obj_rotate</object>
       <object>objects\obj_ghost</object>
       <object>objects\obj_mine</object>
       <object>objects\obj_bug</object>
       <object>objects\obj_enemy_bullet</object>
+      <object>objects\obj_enemy_bullet2</object>
       <object>objects\obj_enemy_part</object>
       <object>objects\obj_slammer</object>
     </objects>
@@ -180,6 +193,7 @@
     <object>objects\obj_game_over</object>
     <object>objects\obj_player_die</object>
     <object>objects\obj_electricity</object>
+    <object>objects\obj_heat_bg</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
