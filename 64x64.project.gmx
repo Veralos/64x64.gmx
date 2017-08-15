@@ -89,6 +89,7 @@
     <sprite>sprites\spr_save_point</sprite>
     <sprite>sprites\spr_title</sprite>
     <sprite>sprites\spr_stars</sprite>
+    <sprite>sprites\spr_electricity</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -178,6 +179,7 @@
     <object>objects\obj_space_bg</object>
     <object>objects\obj_game_over</object>
     <object>objects\obj_player_die</object>
+    <object>objects\obj_electricity</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>

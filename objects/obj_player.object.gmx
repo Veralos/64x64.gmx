@@ -29,6 +29,7 @@
 base_state = 0;
 dash_state = 1;
 magnet_state = 2;
+phase_max = 5;
 
 //variables
 dir_x = 0;
@@ -44,6 +45,7 @@ flash = true;
 state = base_state;
 dash = 0;
 dash_cooldown = 0;
+phase = 0;
 last_floor = -1;
 magnet_flash = true;
 magnet_dir = 1;
@@ -82,6 +84,9 @@ magnet_dir = 1;
     if (dash_cooldown &gt; 0)
         dash_cooldown--;
         
+    if (phase &gt; 0)
+        phase--;
+        
     var curr_floor = instance_place(x, y, obj_floor);
     if (curr_floor != noone &amp;&amp; state != magnet_state)
         last_floor = curr_floor;
@@ -119,6 +124,8 @@ magnet_dir = 1;
             if (keyboard_check_pressed(ord('S')) &amp;&amp; dash_cooldown &lt;= 0 &amp;&amp; scr_item_found(obj_game_control.item_dash)) {
                 audio_play_sound(snd_dash, 0, false);
                 dash = 2;
+                if (scr_item_found(obj_game_control.item_phase_dash))
+                    phase = phase_max;
                 state = dash_state;
             }
             else if (keyboard_check_pressed(ord('D')) &amp;&amp; scr_item_found(obj_game_control.item_magnet)) {
@@ -181,6 +188,9 @@ magnet_dir = 1;
                 
             break;
         case (dash_state):
+            if (scr_item_found(obj_game_control.item_phase_dash))
+                phase = phase_max;
+        
             var ai = instance_create(x, y, obj_afterimage);
             ai.image_angle = angle;
             
@@ -241,6 +251,33 @@ magnet_dir = 1;
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_electricity">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (inv &lt;= 0 &amp;&amp; phase &lt;= 0) {
+    audio_play_sound(snd_hurt, 0, false);
+    obj_game_control.hp -= 2;
+    inv = 15;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_enemy_bullet">
       <action>
         <libid>1</libid>
@@ -258,7 +295,7 @@ magnet_dir = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (inv &lt;= 0 &amp;&amp; !(state == dash_state &amp;&amp; scr_item_found(obj_game_control.item_phase_dash))) {
+            <string>if (inv &lt;= 0 &amp;&amp; phase &lt;= 0) {
     audio_play_sound(snd_hurt, 0, false);
     obj_game_control.hp--;
     with (other)
@@ -287,7 +324,7 @@ magnet_dir = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (inv &lt;= 0 &amp;&amp; !(state == dash_state &amp;&amp; scr_item_found(obj_game_control.item_phase_dash))) {
+            <string>if (inv &lt;= 0 &amp;&amp; phase &lt;= 0) {
     audio_play_sound(snd_hurt, 0, false);
     obj_game_control.hp -= 2;
     inv = 15;
