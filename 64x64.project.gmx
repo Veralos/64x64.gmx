@@ -112,6 +112,7 @@
     <sprite>sprites\spr_evil</sprite>
     <sprite>sprites\spr_drill_box</sprite>
     <sprite>sprites\spr_boss</sprite>
+    <sprite>sprites\spr_icon</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
