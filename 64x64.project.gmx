@@ -35,6 +35,8 @@
     <sound>sound\mus_level3</sound>
     <sound>sound\mus_level4</sound>
     <sound>sound\mus_evil</sound>
+    <sound>sound\mus_title</sound>
+    <sound>sound\mus_victory</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="player">

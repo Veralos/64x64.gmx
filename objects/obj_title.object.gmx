@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>option_list = ds_list_create();
+            <string>audio_play_sound(mus_title, 0, true);
+
+option_list = ds_list_create();
 ds_list_add(option_list,
     "Start",
     "Continue",
@@ -90,6 +92,29 @@ if (keyboard_check_pressed(ord('A'))) {
             break;
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>audio_stop_sound(mus_title);
 </string>
           </argument>
         </arguments>

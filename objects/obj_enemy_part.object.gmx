@@ -48,7 +48,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var active = true;
+            <string>if (sprite_index == spr_ghost || sprite_index == spr_boss)
+    visible = !visible;
+
+var active = true;
 if (instance_exists(obj_game_control))
     active =  (obj_game_control.state == obj_game_control.base_state || obj_game_control.state == obj_game_control.end_state)
 
