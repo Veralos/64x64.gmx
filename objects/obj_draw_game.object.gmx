@@ -268,6 +268,28 @@ room_goto_next();
                     
                     draw_set_font(fnt_main);
                     
+                    draw_set_color(c_white);
+                    
+                    var legend;
+                    legend[0] = "You";
+                    legend[1] = "Save";
+                    legend[2] = "Lift";
+                    legend[3] = "Item";
+                    
+                    var blend;
+                    blend[0] = c_white;
+                    blend[1] = make_color_rgb(0, 255, 255);
+                    blend[2] = make_color_rgb(255, 255, 0);
+                    blend[3] = make_color_rgb(255, 0, 255);
+                    
+                    for (var i = 0; i &lt; 4; i++) {
+                        var alpha = 1;
+                        if (i == 0 &amp;&amp; !flash)
+                            alpha = 0;
+                        draw_sprite_ext(spr_map_square, 0, 35, 8 + 5 * i, 1, 1, 0, blend[i], alpha);
+                        draw_text(48, 10 + 5 * i, legend[i]);
+                    }
+                    
                     scr_draw_levels(obj_game_control.unlocked_levels, obj_game_control.level, obj_game_control.lift_selected, 32, 36);
                 
                     var draw_flash = flash;
