@@ -175,16 +175,16 @@ room_goto_next();
             var ammo = obj_game_control.ammo;
             
             draw_set_color(c_gray);
-            draw_rectangle(1, 58 - floor(53 * (max_hp / 16)), 2, 58, false);
-            draw_rectangle(61, 58 - floor(53 * (max_ammo / 16)), 62, 58, false);
+            draw_rectangle(1, 59 - floor(55 * (max_hp / 8)), 2, 59, false);
+            draw_rectangle(61, 59 - floor(55 * (max_ammo / 8)), 62, 59, false);
             
             if (hp &gt; 0) {
                 draw_set_color(c_blue);
-                draw_rectangle(1, 58 - floor(53 * (hp / max_hp) * (max_hp / 16)), 2, 58, false);
+                draw_rectangle(1, 59 - floor(55 * (hp / max_hp) * (max_hp / 8)), 2, 59, false);
             }
             if (ammo &gt; 0) {
                 draw_set_color(make_color_rgb(255, 128, 0));
-                draw_rectangle(61, 58 - floor(53 * (ammo / max_ammo) * (max_ammo / 16)), 62, 58, false);
+                draw_rectangle(61, 59 - floor(55 * (ammo / max_ammo) * (max_ammo / 8)), 62, 59, false);
             }
             
             for (var i = 0; i &lt; 6; i++) {
