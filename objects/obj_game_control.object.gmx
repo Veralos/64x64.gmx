@@ -155,8 +155,7 @@ switch (state) {
                 obj_player.persistent = false;
             instance_create(0, 0, obj_game_over);
         }
-        
-        if (instance_exists(obj_player)) {
+        else if (instance_exists(obj_player)) {
             mask_index = spr_player;
             if (place_meeting(obj_player.x, obj_player.y, obj_elevator))
                 on_lift = true;

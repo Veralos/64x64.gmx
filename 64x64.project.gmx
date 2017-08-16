@@ -77,9 +77,12 @@
       <sprite>sprites\spr_box_power</sprite>
       <sprite>sprites\spr_turret</sprite>
       <sprite>sprites\spr_turret2</sprite>
+      <sprite>sprites\spr_scatter</sprite>
       <sprite>sprites\spr_enemy_bullet</sprite>
       <sprite>sprites\spr_enemy_bullet2</sprite>
+      <sprite>sprites\spr_boss_bullet</sprite>
       <sprite>sprites\spr_bug</sprite>
+      <sprite>sprites\spr_bug2</sprite>
       <sprite>sprites\spr_slammer</sprite>
       <sprite>sprites\spr_mine</sprite>
       <sprite>sprites\spr_ghost</sprite>
@@ -104,7 +107,7 @@
     <sprite>sprites\spr_vault</sprite>
     <sprite>sprites\spr_evil</sprite>
     <sprite>sprites\spr_drill_box</sprite>
-    <sprite>sprites\spr_bug2</sprite>
+    <sprite>sprites\spr_boss</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -176,14 +179,17 @@
       <object>objects\obj_turret</object>
       <object>objects\obj_turret2</object>
       <object>objects\obj_rotate</object>
+      <object>objects\obj_scatter</object>
       <object>objects\obj_ghost</object>
       <object>objects\obj_mine</object>
       <object>objects\obj_bug</object>
       <object>objects\obj_bug2</object>
       <object>objects\obj_enemy_bullet</object>
       <object>objects\obj_enemy_bullet2</object>
+      <object>objects\obj_boss_bullet</object>
       <object>objects\obj_enemy_part</object>
       <object>objects\obj_slammer</object>
+      <object>objects\obj_boss</object>
     </objects>
     <object>objects\obj_elevator</object>
     <objects name="item">

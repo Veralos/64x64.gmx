@@ -24,11 +24,11 @@
     <showBackgrounds>-1</showBackgrounds>
     <showForegrounds>-1</showForegrounds>
     <showViews>0</showViews>
-    <deleteUnderlyingObj>-1</deleteUnderlyingObj>
+    <deleteUnderlyingObj>0</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
-    <page>1</page>
-    <xoffset>-323</xoffset>
-    <yoffset>-210</yoffset>
+    <page>0</page>
+    <xoffset>-159</xoffset>
+    <yoffset>-78</yoffset>
   </makerSettings>
   <backgrounds>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -247,6 +247,13 @@
     <instance objName="obj_floor_main" x="52" y="28" name="inst_99E4E8FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_floor_main" x="52" y="24" name="inst_E4BF1DF2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_floor_main" x="52" y="20" name="inst_3DE2759A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_scatter" x="12" y="28" name="inst_E409819E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_turret" x="12" y="12" name="inst_A96D9CF3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_turret" x="12" y="44" name="inst_825E657D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall_enemy" x="20" y="52" name="inst_A2F13A16" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall_enemy" x="24" y="52" name="inst_960F3790" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall_enemy" x="28" y="52" name="inst_6BCF38C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall_enemy" x="32" y="52" name="inst_0E7EBE6E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
