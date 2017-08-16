@@ -186,7 +186,7 @@ convey_y = 0;
                     event_user(0);
             }
     
-            if (curr_floor == noone &amp;&amp; !place_meeting(x, y, obj_floor_collapse) &amp;&amp; !place_meeting(x, y, obj_conveyor)) {
+            if (state != magnet_state &amp;&amp; curr_floor == noone &amp;&amp; !place_meeting(x, y, obj_floor_collapse) &amp;&amp; !place_meeting(x, y, obj_conveyor)) {
                 if (inv &lt;= 0 &amp;&amp; instance_exists(obj_heat)) {
                     audio_play_sound(snd_hurt, 0, false);
                     obj_game_control.hp -= 2;
