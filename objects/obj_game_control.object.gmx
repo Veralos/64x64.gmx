@@ -340,6 +340,12 @@ ammo_delay = 30;
 
 var old_string = ds_grid_get(ds_list_find_value(map_list, level), room_x, room_y);
 var room_string = "1";
+if (instance_exists(obj_elevator))
+    room_string = "2";
+if (instance_exists(obj_save_point))
+    room_string = "3";
+if (instance_exists(obj_pickup))
+    room_string = "4";
 
 room_string += scr_check_empty_x(room_width - 4);
 room_string += scr_check_empty_y(0);

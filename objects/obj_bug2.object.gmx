@@ -67,29 +67,6 @@ for (var dir = 0; dir &lt; 360; dir += 45) {
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>image_angle = dir;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="7" enumb="10">
       <action>
         <libid>1</libid>
@@ -107,7 +84,9 @@ for (var dir = 0; dir &lt; 360; dir += 45) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>move_x = lengthdir_x(move, dir);
+            <string>image_angle = dir;
+
+move_x = lengthdir_x(move, dir);
 move_y = lengthdir_y(move, dir);
 
 if (place_free(x + move_x, y + move_y)) {
