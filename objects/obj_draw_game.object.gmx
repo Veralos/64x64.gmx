@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>if (keyboard_check_pressed(vk_f3)) { 
-    scale *= 2
-    if (scale &gt; 16)
+    scale++;
+    if (scale &gt; full_scale)
         scale = 1;
         
     window_set_size(scale * 64, scale * 64);
@@ -97,7 +97,18 @@ game_surface = surface_create(64, 64);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scale = 8
+            <string>scale = 8;
+full_scale = 1;
+
+var d_w = display_get_width();
+var d_h = display_get_height()
+
+while (64 * (full_scale + 1) &lt; d_w &amp;&amp; 64 * (full_scale + 1) &lt; d_h)
+    full_scale++;
+    
+display_x = d_w / 2 - full_scale * 32;
+display_y = d_h / 2 - full_scale * 32;
+
 //window_set_size(64 * scale, 64 * scale);
 
 application_surface_enable(false);
@@ -275,8 +286,11 @@ room_goto_next();
     if (invert &gt; 0)
         shader_set(shad_invert);
     
-    draw_surface_stretched(game_surface, 0, shake * scale, 64 * scale, 64 * scale);
-    
+    if (window_get_fullscreen())
+        draw_surface_stretched(game_surface, display_x, display_y + shake * full_scale, 64 * full_scale, 64 * full_scale);
+    else
+        draw_surface_stretched(game_surface, 0, shake * scale, 64 * scale, 64 * scale);
+
     if (invert &gt; 0) {
         shader_reset();
         invert--;
