@@ -103,6 +103,7 @@
     <sprite>sprites\spr_drill</sprite>
     <sprite>sprites\spr_vault</sprite>
     <sprite>sprites\spr_evil</sprite>
+    <sprite>sprites\spr_drill_box</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -207,6 +208,7 @@
     <object>objects\obj_vault</object>
     <object>objects\obj_evil</object>
     <object>objects\obj_evil_music</object>
+    <object>objects\obj_drill_box</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
