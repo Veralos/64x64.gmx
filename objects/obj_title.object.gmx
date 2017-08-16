@@ -31,10 +31,17 @@ option_list = ds_list_create();
 ds_list_add(option_list,
     "Start",
     "Continue",
+    "Fullscreen",
+    "Scale",
     "Quit"
 );
 
-selected = 0;
+saved = file_exists("ao_save");
+
+if (saved)
+    selected = 1;
+else
+    selected = 0;
 
 load = false;
 </string>
@@ -80,11 +87,25 @@ if (keyboard_check_pressed(ord('A'))) {
             instance_create(0, 0, obj_game_control);
             break;
         case 1:
-            audio_play_sound(snd_confirm, 0, false);
-            load = true;
-            instance_create(0, 0, obj_game_control);
+            if (saved) {
+                audio_play_sound(snd_confirm, 0, false);
+                load = true;
+                instance_create(0, 0, obj_game_control);
+            }
+            else
+                audio_play_sound(snd_error, 0, false);
             break;
         case 2:
+            audio_play_sound(snd_confirm, 0, false);
+            with (obj_draw_game)
+                event_user(1);
+            break;
+        case 3:
+            audio_play_sound(snd_confirm, 0, false);
+            with (obj_draw_game)
+                event_user(0);
+            break;
+        case 4:
             game_end();
             break
         default:
@@ -148,10 +169,30 @@ draw_set_font(fnt_main);
 
 for (var i = 0; i &lt; ds_list_size(option_list); i++) {
     var text = ds_list_find_value(option_list, i);
+    
+    switch (i) {
+        case 2:
+            if (window_get_fullscreen())
+                text += ": On";
+            else
+                text += ": Off";
+            break;
+        case 3:
+            text += ": x" + string(obj_draw_game.scale);
+            break;
+    }
+    
     if (i == selected)
         text = "&gt;" + text + "&lt;";
-    draw_text(32, 32 + 5 * i, text);
+        
+    draw_set_alpha(1);
+    if (i == 1 &amp;&amp; !saved)
+        draw_set_alpha(0.5);
+        
+    draw_text(32, 33 + 5 * i, text);
 }
+
+draw_set_alpha(1);
 </string>
           </argument>
         </arguments>

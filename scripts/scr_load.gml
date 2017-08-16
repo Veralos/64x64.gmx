@@ -1,4 +1,4 @@
-ini_open("save");
+ini_open("ao_save");
 
 //level
 level = ini_read_real("Save", "level", level);
