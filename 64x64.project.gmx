@@ -104,6 +104,7 @@
     <sprite>sprites\spr_vault</sprite>
     <sprite>sprites\spr_evil</sprite>
     <sprite>sprites\spr_drill_box</sprite>
+    <sprite>sprites\spr_bug2</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -178,6 +179,7 @@
       <object>objects\obj_ghost</object>
       <object>objects\obj_mine</object>
       <object>objects\obj_bug</object>
+      <object>objects\obj_bug2</object>
       <object>objects\obj_enemy_bullet</object>
       <object>objects\obj_enemy_bullet2</object>
       <object>objects\obj_enemy_part</object>
