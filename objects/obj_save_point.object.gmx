@@ -53,6 +53,7 @@
     instance_create(x, y, obj_saved);
     with (obj_game_control) {
         hp = max_hp;
+        ammo = max_ammo;
         scr_save();
     }
     active = false;

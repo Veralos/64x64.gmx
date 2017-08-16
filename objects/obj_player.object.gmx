@@ -39,7 +39,7 @@ facing_y = 1;
 priority_x = true;
 angle = 0;
 right_gun = true;
-canshoot = 0;
+canshoot = 10;
 inv = 0;
 flash = true;
 state = base_state;
@@ -514,7 +514,8 @@ if (state == magnet_state) {
 
 if (flash || inv &lt;= 0) {
     draw_sprite_ext(sprite, 0, x, y, 1, 1, angle, c_white, 1);
-    draw_sprite_ext(spr_player_indicator, 0, x, y, 1, 1, angle, draw_get_color(), 1);
+    if (scr_item_found(obj_game_control.item_magnet))
+        draw_sprite_ext(spr_player_indicator, 0, x, y, 1, 1, angle, draw_get_color(), 1);
 }
 </string>
           </argument>

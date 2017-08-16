@@ -84,7 +84,8 @@ if (ds_list_find_index(obj_game_control.item_list, item_id) &gt; - 1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
+            <string>with (obj_floor_collapse)
+    instance_destroy();
 
 audio_pause_sound(ds_list_find_value(obj_game_control.music_list, obj_game_control.level));
 audio_play_sound(snd_collect, 0, false);

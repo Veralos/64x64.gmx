@@ -147,8 +147,10 @@ switch (state) {
         else
             air = 200;
             
-        if (air &lt;= 0)
+        if (air &lt;= 0) {
+            audio_play_sound(snd_hurt, 0, false);
             hp = 0;
+        }
             
         if (go_to_end &gt; 0) {
             go_to_end++;
@@ -174,6 +176,7 @@ switch (state) {
             if (keyboard_check_pressed(vk_shift) &amp;&amp; on_lift) {
                 audio_play_sound(snd_lift, 0, false);
                 state = lift_state;
+                obj_player.canshoot = 10;
             }
             mask_index = spr_floor_base;
             

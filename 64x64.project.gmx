@@ -113,6 +113,8 @@
     <sprite>sprites\spr_drill_box</sprite>
     <sprite>sprites\spr_boss</sprite>
     <sprite>sprites\spr_icon</sprite>
+    <sprite>sprites\spr_ship</sprite>
+    <sprite>sprites\spr_ship_door</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -159,6 +161,7 @@
       <object>objects\obj_wall_evil</object>
       <object>objects\obj_wall_enemy</object>
       <object>objects\obj_wall_phase</object>
+      <object>objects\obj_ship_door</object>
       <object>objects\obj_wall_invisible</object>
     </objects>
     <objects name="floor">
@@ -225,6 +228,7 @@
     <object>objects\obj_evil_music</object>
     <object>objects\obj_drill_box</object>
     <object>objects\obj_boss_activator</object>
+    <object>objects\obj_ship</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
