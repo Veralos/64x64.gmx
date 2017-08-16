@@ -25,6 +25,8 @@
       <sound>sound\snd_lift</sound>
       <sound>sound\snd_slam</sound>
       <sound>sound\snd_save</sound>
+      <sound>sound\snd_boss</sound>
+      <sound>sound\snd_boss_die</sound>
     </sounds>
     <sound>sound\mus_fanfare</sound>
     <sound>sound\mus_level0</sound>
@@ -171,6 +173,7 @@
       <object>objects\obj_conveyor_u</object>
     </objects>
     <object>objects\obj_title</object>
+    <object>objects\obj_end</object>
     <object>objects\obj_game_control</object>
     <objects name="enemy">
       <object>objects\obj_enemy</object>
@@ -217,10 +220,12 @@
     <object>objects\obj_evil</object>
     <object>objects\obj_evil_music</object>
     <object>objects\obj_drill_box</object>
+    <object>objects\obj_boss_activator</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
     <room>rooms\rm_title</room>
+    <room>rooms\rm_end</room>
     <room>rooms\rm_game_over</room>
     <rooms name="level0">
       <room>rooms\rm_level0_4_1</room>

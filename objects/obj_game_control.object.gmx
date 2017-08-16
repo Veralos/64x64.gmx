@@ -31,8 +31,11 @@ base_state = 0;
 item_state = 1;
 lift_state = 2;
 map_state = 3;
+end_state = 4;
 
 state = base_state;
+
+go_to_end = 0;
 
 on_lift = false;
 
@@ -147,7 +150,15 @@ switch (state) {
         if (air &lt;= 0)
             hp = 0;
             
-        if (hp &lt;= 0) {
+        if (go_to_end &gt; 0) {
+            go_to_end++;
+            if (go_to_end &gt; 40) {
+                persistent = false;
+                obj_player.persistent = false;
+                room_goto(rm_end);
+            }
+        }
+        else if (hp &lt;= 0) {
             audio_stop_sound(mus_evil);
             audio_stop_sound(ds_list_find_value(music_list, level));
             persistent = false;

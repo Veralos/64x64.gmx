@@ -48,12 +48,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x += mod_x * 2;
-y += mod_y * 2;
+            <string>var active = true;
+if (instance_exists(obj_game_control))
+    active =  (obj_game_control.state == obj_game_control.base_state || obj_game_control.state == obj_game_control.end_state)
 
-alpha -= 0.3;
-if (alpha &lt;= 0)
-    instance_destroy();
+if (active) {
+    x += mod_x * 2;
+    y += mod_y * 2;
+    
+    alpha -= 0.3;
+    if (alpha &lt;= 0)
+        instance_destroy();
+}
 </string>
           </argument>
         </arguments>
